@@ -1,32 +1,23 @@
-from flask import Flask, jsonify
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask
+from models.db import db
+from routes.country_routes import country_bp
+from routes.fullnews_routes import fullnews_bp
+from routes.bannernews_routes import bannernews_bp
+from routes.menuitem_routes import menuitem_bp
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:ylteicz@localhost/mydatabase'
-db = SQLAlchemy(app)
+db.init_app(app)
 
-class Country(db.Model):
-    __tablename__ = 'countries'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100))
-
-@app.route('/countries', methods=['GET'])
-def get_countries():
-    countries = Country.query.all()
-    country_list = [{'id': country.id, 'name': country.name} for country in countries]
-    return jsonify(country_list)
+# Register blueprints
+app.register_blueprint(country_bp)
+app.register_blueprint(fullnews_bp)
+app.register_blueprint(bannernews_bp)
+app.register_blueprint(menuitem_bp)
 
 @app.route('/')
 def hello_world():
-    countries = Country.query.all()
-    country_names = [country.name for country in countries]
-    return 'Hello World! Countries: ' + ', '.join(country_names)
+    return 'NCNC backend'
 
-#Set the host to be the same as ipv4 address found on 'ipconfig' if launching on local machine.
-#Else, use http address provided by online providers ie Heroku.
-#if you get 'The requested address is not valid in its context' error when running 'python main.py',
-#it means the ipv4 address of the modem has changed. Check it again on ipconfig and
-#replace 
 if __name__ == '__main__':
-
-    app.run(host='192.168.1.19', debug=True)    
+    app.run(host='192.168.1.19', debug=True)

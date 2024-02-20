@@ -1,0 +1,60 @@
+To install PostgreSQL, type 'pip install psycopg2-binary'
+pip install Flask Flask-SQLAlchemy psycopg2-binary
+====
+
+install postgreql from internet
+then run sql shell
+
+
+----
+Server [localhost]: (press enter)
+Database [postgres]: (press enter)
+Port [5432]: (press enter)
+Username [postgres]: (press enter)
+Password for user postgres:(enter actual password you set when installing postgresql)
+
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=#
+
+===
+at postgres=#, type 'CREATE DATABASE mydatabase;'
+then connect to 'mydatabase' with '\c mydatabase'
+check which database is connected with 'SELECT current_database();'
+the header of the terminal should show the name of the database it's connected to ie 'mydatabase=#'
+===
+
+For the rest, just use ChatGPT
+
+
+to view a table vertically, type it like this in sql terminal:
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'menuitem';
+
+to create a table in menuitem:
+INSERT INTO menuitem (title)
+VALUES ('Coffee 1');
+
+INSERT INTO menuitem (title) VALUES ('Coffee 2');
+
+UPDATE menuitem
+SET imagepath = 'models/menuitem/coffeesample.png',
+    price = 10,
+    category = 'Coffee',
+    description = 'A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.',
+    available = true
+WHERE title = 'Coffee 1';
+
+INSERT INTO menuitem (title)
+VALUES ('Coffee 1');
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Coffee 1', 10.00, 'Coffee',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+
