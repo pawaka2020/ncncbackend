@@ -58,3 +58,230 @@ VALUES ('assets/images/coffeesample.png', 'Coffee 1', 10.00, 'Coffee',
         'Crafted from premium, handpicked coffee beans, this dark roast boasts '
         'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
 
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 1);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 1); 
+
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 1);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 1);
+# find out the addition_id first
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 1);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 1);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 1);
+# find out the addition_id first
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 2);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 2);
+# find out the menuitem_id first
+insert into ingredient (name, menuitem_id) values ('Supremo', 1);
+insert into ingredient (name, menuitem_id) values ('Lemon', 1);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 1);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Coffee 2, 10.00, 'Coffee',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 2);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 2); 
+
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 2);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 2);
+
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 3);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 3);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 3);
+
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 4);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 4);
+
+insert into ingredient (name, menuitem_id) values ('Supremo', 2);
+insert into ingredient (name, menuitem_id) values ('Lemon', 2);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 2);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Coffee 3', 10.00, 'Coffee',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+
+
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 3);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 3); 
+
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 3);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 3);
+
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 5);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 5);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 5);
+
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 6);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 6);
+
+insert into ingredient (name, menuitem_id) values ('Supremo', 3);
+insert into ingredient (name, menuitem_id) values ('Lemon', 3);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 3);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Coffee 4', 10.00, 'Coffee',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 4);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 4); 
+
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 4);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 4);
+
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 7);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 7);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 7);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 8);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 8);
+
+insert into ingredient (name, menuitem_id) values ('Supremo', 4);
+insert into ingredient (name, menuitem_id) values ('Lemon', 4);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 4);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Non-Coffee 1', 10.00, 'Non-Coffee',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 5);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 5); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 5);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 5);
+insert into ingredient (name, menuitem_id) values ('Supremo', 5);
+insert into ingredient (name, menuitem_id) values ('Lemon', 5);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 5);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 9);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 9);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 9);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 10);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 10);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Appetizer 1', 10.00, 'Appetizers',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 6);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 6); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 6);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 6);
+insert into ingredient (name, menuitem_id) values ('Supremo', 6);
+insert into ingredient (name, menuitem_id) values ('Lemon', 6);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 6);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 11);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 11);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 11);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 12);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 12);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Appetizer 2', 10.00, 'Appetizers',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 7);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 7); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 7);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 7);
+insert into ingredient (name, menuitem_id) values ('Supremo', 7);
+insert into ingredient (name, menuitem_id) values ('Lemon', 7);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 7);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 13);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 13);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 13);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 14);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 14);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Snack 1', 10.00, 'Snacks',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 8);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 8); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 8);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 8);
+insert into ingredient (name, menuitem_id) values ('Supremo', 8);
+insert into ingredient (name, menuitem_id) values ('Lemon', 8);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 8);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 15);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 15);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 15);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 16);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 16);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Snack 2', 10.00, 'Snacks',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 9);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 9); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 9);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 9);
+insert into ingredient (name, menuitem_id) values ('Supremo', 9);
+insert into ingredient (name, menuitem_id) values ('Lemon', 9);
+insert into ingredient (name, menuitem_id) values ('Soda lemon', 9);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 15);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 15);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 15);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 16);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 16);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Snack 3', 10.00, 'Snacks',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 10);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 10); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 10);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 10);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 17);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 17);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 17);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 18);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 18);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Food 1', 10.00, 'Meals',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 11);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 11); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 11);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 11);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 19);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 19);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 19);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 20);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 20);
+
+INSERT INTO menuitem (imagepath, title, price, category, description, available)
+VALUES ('assets/images/coffeesample.png', 'Food 2', 10.00, 'Meals',
+        'A rich and bold blend that promises to keep you wide awake and invigorated. '
+        'Crafted from premium, handpicked coffee beans, this dark roast boasts '
+        'a robust flavor with deep, earthy undertones and a subtle hint of cocoa.', true);
+insert into userreview (name, message, stars, menuitem_id) values ('Richard', 'Powerful.', 5, 12);
+insert into userreview (name, message, stars, menuitem_id) values ('Susan Boyle', 'Bitter but just the shot I need for my overtime shift.', 4, 12); 
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Beans', 0, 0, 12);
+insert into addition (title, selectedprice, selectedindex, menuitem_id) values ('Sweetness', 0, 0, 12);
+insert into additiondetail (name, price, addition_id) values ('Supremo', 0, 20);
+insert into additiondetail (name, price, addition_id) values ('Yir', 5.45, 20);
+insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 20);
+insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 21);
+insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 21);
+
+
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'ingredient';
