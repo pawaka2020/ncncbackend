@@ -37,15 +37,12 @@ def get_menuitems():
             'name': ingredient.name
         } for ingredient in item.ingredient]
 
-
-
-
-
         menuitem_dict = {
             'id': item.id,
             'imagepath': item.imagepath,
             'title': item.title,
             'price': item.price,
+            'description': item.description,
             'category': item.category,
             'available': item.available,
             'userreviews': [{
@@ -62,4 +59,4 @@ def get_menuitems():
 
 @menuitem_bp.route('/images/menuitem/<path:filename>')
 def serve_menuitem_image(filename):
-    return send_from_directory('models/menuitem/', filename)
+    return send_from_directory('static/images/menuitem/', filename)

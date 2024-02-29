@@ -13,4 +13,4 @@ def get_bannernews():
 
 @bannernews_bp.route('/images/bannernews/<path:filename>')
 def serve_banner_image(filename):
-    return send_from_directory('models/bannernews/', filename)
+    return send_from_directory('static/images/bannernews/', filename)

@@ -13,4 +13,4 @@ def get_fullnews():
 
 @fullnews_bp.route('/images/fullnews/<path:filename>')
 def serve_fullnews_image(filename):
-    return send_from_directory('models/fullnews/', filename)
+    return send_from_directory('static/images/fullnews/', filename)
