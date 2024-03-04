@@ -14,10 +14,16 @@ def generate_auth_token(user_id, phone_number, guest=False, new_user=False):
 
     # Define the payload dictionary
     payload = {
+        #object field-specific payloads
         "userId": user_id,
         "phoneNumber": phone_number,
         "guest": guest,
-        "newUser": new_user
+        "newUser": new_user,
+        #backlinks to objects-specific payloads (TODO later)
+        #token-specific payloads
+        "exp": 60, #Actually I want this to be a temporal value, also optionally can be set to not have the token expire
+        "iss": 'ncnc_backend', #?? I don't know how to set this.
+        "aud": "ncnc_mobile_app", #?? I don't know what this is. 
     }
 
     # Serialize the payload to JSON

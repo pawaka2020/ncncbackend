@@ -48,11 +48,27 @@ def flip_user_log_status(user):
     else:
         return False
 
+# write a new entry in 'users' table
+def create_new_user(user_id, phone_number):
+    # Create a new User object with the provided user_id and phone_number
+    # Assign starting values for the other fields of this User object
+    new_user = User(
+        user_id = user_id, 
+        name = 'User',
+        email = '',
+        birthday = None,
+        phone_number=phone_number,
+        address = '',
+        profile_image = '',
+        coins = 0,
+        guest = False,
+        is_logged_in = True,
+        new_user = True,
+        set_default_address = False,
+    )
 
-#   Find the user with the provided phone number
-#   user = find_registered_user(phone_number)
-#   If a matching user is found and not already logged in
-#   if user:
-#     create_token_from_existing_user(user)
-#   else:
-#     create_token_from_new_user(phone_number)
+    # Add the new user object to the session and commit changes to the database
+    db.session.add(new_user)
+    db.session.commit()
+
+    print("New user created successfully")

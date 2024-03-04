@@ -1,0 +1,28 @@
+4/3/2024
+create a token generation function for new user and existing user respectively
+
+Set up backlinks for the User class
+  @Backlink()
+  final reviews = ToMany<UserReview2OB>();
+  @Backlink()
+  final orders = ToMany<OrderOB>();
+  @Backlink()
+  final vouchers = ToMany<VoucherOB>();
+  @Backlink()
+  final cartItems = ToMany<CartItemOB>();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----
+
