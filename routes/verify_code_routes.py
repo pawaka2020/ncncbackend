@@ -19,11 +19,12 @@ verify_code_bp = Blueprint('verify_code', __name__)
 
 @verify_code_bp.route('/api/verify_code', methods=['POST'])
 def verify_code():
+    # Obtain data from JSON sent to this route
     data = request.get_json()
     phone_number = data.get('phone_number')
     entered_code = data.get('entered_code')
 
-    # obtain 'stored_code' from dictionary entry 'verification_codes' that contains matching 'phone_number'
+    # Obtain 'stored_code' from dictionary entry 'verification_codes' that contains matching 'phone_number'
     stored_code = verification_codes.get(phone_number)
 
     auth_token = None

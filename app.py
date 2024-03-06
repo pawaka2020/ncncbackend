@@ -7,8 +7,16 @@ from routes.bannernews_routes import bannernews_bp
 from routes.menuitem_routes import menuitem_bp
 from routes.verify_routes import verify_bp 
 from routes.verify_code_routes import verify_code_bp
+from routes.verify_email_routes import verify_email_bp
+from routes.verify_email_code_routes import verify_email_code_bp
 from routes.user_routes import user_bp
+#utils
+from utils.send_email import send_email
 from models.user import find_registered_user
+#
+from flask import Flask
+from flask_mail import Mail, Message
+
  
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:ylteicz@localhost/mydatabase'
@@ -19,8 +27,10 @@ app.register_blueprint(country_bp)
 app.register_blueprint(fullnews_bp)
 app.register_blueprint(bannernews_bp)
 app.register_blueprint(menuitem_bp)
-app.register_blueprint(verify_bp)  # Register the verify blueprint
+app.register_blueprint(verify_bp)
 app.register_blueprint(verify_code_bp)
+app.register_blueprint(verify_email_bp)
+app.register_blueprint(verify_email_code_bp)
 app.register_blueprint(user_bp)
 
 @app.route('/')
@@ -30,9 +40,5 @@ def hello_world():
 if __name__ == '__main__':
     with app.app_context():  
         # Use this space to test your functions
-        user = find_registered_user('+1234567890')
-        if (user):
-            print("on main, user found")
-        else:
-            print('on main, user not found')
+        print("")
     app.run(host='192.168.1.21', debug=True)

@@ -1,5 +1,10 @@
 # models/user.py
 
+# postgreSQL commands:
+# delete all entries : DELETE FROM users;
+# \d users
+
+
 from .db import db
 
 # Define the User model
@@ -30,6 +35,17 @@ def find_registered_user(phone_number):
         # Return None if no matching user was found
         return None
 
+def find_user_by_email(email):
+    # Query the 'users' table to find a matching entry
+    user = User.query.filter_by(email=email, is_logged_in=False).first()
+
+    if user:
+        # Return the user object or user data
+        return user
+    else:
+        # Return None if no matching user was found
+        return None
+
 # takes a 'user' object, finds the matching 'entry' in the 'users' table by its 'id', 
 # then flips the entry's 'is_logged_in' value to its opposite end ie if originally true then false, if false then true
 def flip_user_log_status(user):
@@ -49,15 +65,15 @@ def flip_user_log_status(user):
         return False
 
 # write a new entry in 'users' table
-def create_new_user(user_id, phone_number):
+def create_new_user(user_id, email):
     # Create a new User object with the provided user_id and phone_number
     # Assign starting values for the other fields of this User object
     new_user = User(
         user_id = user_id, 
         name = 'User',
-        email = '',
+        email = email,
         birthday = None,
-        phone_number=phone_number,
+        phone_number= '',
         address = '',
         profile_image = '',
         coins = 0,
