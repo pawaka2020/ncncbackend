@@ -11,10 +11,12 @@ class Addition(db.Model):
     title = db.Column(db.String(255))
     selectedprice = db.Column(db.Float)
     selectedindex = db.Column(db.Integer)
-    menuitem_id = db.Column(db.Integer, db.ForeignKey('menuitem.id'))
-
+    
     # Relationships with classes below it
     addition_details = db.relationship('AdditionDetail', backref='addition', lazy=True)
+
+    # Relationships with classes above it    
+    menuitem_id = db.Column(db.Integer, db.ForeignKey('menuitem.id'))
 
     def __repr__(self):
         return f"<Addition {self.id}>"

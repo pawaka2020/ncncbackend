@@ -1,15 +1,18 @@
 # models/user.py
 
 # postgreSQL commands:
-# delete all entries : DELETE FROM users;
+# delete all entries : 
+#DELETE FROM users;
 # \d users
 
-
+from datetime import datetime
 from .db import db
 
 # Define the User model
 class User(db.Model):
     __tablename__ = 'users'
+
+    # Proprietary fields
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.String(255))
     name = db.Column(db.String(255))
@@ -23,6 +26,9 @@ class User(db.Model):
     is_logged_in = db.Column(db.Boolean)
     new_user = db.Column(db.Boolean)
     set_default_address = db.Column(db.Boolean)
+
+    # Relationships with classes below it.
+    #cartitem = db.Relationship("CartItem", backref = 'user', lazy=True)
 
 def find_registered_user(phone_number):
     # Query the 'users' table to find a matching entry
@@ -72,7 +78,7 @@ def create_new_user(user_id, email):
         user_id = user_id, 
         name = 'User',
         email = email,
-        birthday = None,
+        birthday = datetime(1900, 1, 1), # change this to DateTime(1900, 1, 1)
         phone_number= '',
         address = '',
         profile_image = '',

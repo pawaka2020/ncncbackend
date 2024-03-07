@@ -9,6 +9,8 @@ class AdditionDetail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     price = db.Column(db.Float)
+
+    # Relationship with classes above it
     addition_id = db.Column(db.Integer, db.ForeignKey('addition.id'))
 
     def __repr__(self):

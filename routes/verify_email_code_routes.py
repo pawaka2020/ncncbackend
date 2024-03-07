@@ -14,6 +14,7 @@ import hashlib
 import json
 import datetime
 import jwt
+#from datetime import datetime
 
 verify_email_code_bp = Blueprint('verify_email_code', __name__)
 
@@ -33,29 +34,6 @@ def verify_code():
 
     auth_token = None
     
-    # if stored_code and stored_code == entered_code:
-    #     print("stored code", stored_code, "matches entered code", entered_code)
-    #     user = find_user_by_email(email)
-
-    #     if (user):
-    #         print("User found. Creating auth token based on existing user")
-    #         auth_token = create_token_existing_user(user)
-    #     else :
-    #         print('User not found. Creating auth token for new user')
-    #         auth_token = create_token_new_user(email)
-        
-    #     response_data = {
-    #         'message': 'Code verification successful',
-    #         'email': email,
-    #         'verification_code': entered_code,
-    #         'auth_token': auth_token,
-    #     }
-    #     return jsonify(response_data), 200
-    # else:
-    #     print("Error: stored code", stored_code, "does not match entered code", entered_code)
-    #     return jsonify({'message': 'Code verification failed'}), 400 
-    
-    #     print("stored code", stored_code, "matches entered code", entered_code)
     user = find_user_by_email(email)
 
     if (user):
@@ -81,7 +59,7 @@ def create_token_new_user(email):
         "user_id" : random_user_id,
         "name" : 'User',
         "email" : email,
-        "birthday" : None,
+        "birthday" : '1900-01-01',
         "phone_number" : '',
         "address" : '',
         "profile_image" : '',

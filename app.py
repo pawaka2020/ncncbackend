@@ -10,6 +10,7 @@ from routes.verify_code_routes import verify_code_bp
 from routes.verify_email_routes import verify_email_bp
 from routes.verify_email_code_routes import verify_email_code_bp
 from routes.user_routes import user_bp
+from routes.cartitem_routes import cartitem_bp
 #utils
 from utils.send_email import send_email
 from models.user import find_registered_user
@@ -32,6 +33,7 @@ app.register_blueprint(verify_code_bp)
 app.register_blueprint(verify_email_bp)
 app.register_blueprint(verify_email_code_bp)
 app.register_blueprint(user_bp)
+app.register_blueprint(cartitem_bp)
 
 @app.route('/')
 def hello_world():

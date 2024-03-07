@@ -16,8 +16,6 @@ def get_menuitems():
             'message': review.message, 
             'stars': review.stars
         } for review in item.userreview]
-
-
         # Extract additions
         additions = []
         for addition in item.addition:
@@ -31,12 +29,10 @@ def get_menuitems():
                 } for detail in addition.addition_details]  # Extract addition details
             }
             additions.append(addition_dict)
-
         # Extract ingredients
         ingredients = [{
             'name': ingredient.name
         } for ingredient in item.ingredient]
-
         menuitem_dict = {
             'id': item.id,
             'imagepath': item.imagepath,
@@ -51,14 +47,11 @@ def get_menuitems():
                 'stars': review.stars
             } for review in item.userreview],
             'additions': additions,
-            'ingredients': ingredients
+            'ingredients': ingredients,
+            'cartitems' : item.cartitem_id,
         }
         menuitem_list.append(menuitem_dict)
-    
     return jsonify(menuitem_list)
-
-    # serialized_menuitems = [menuitems.serialize() for menuitem in menuitems]
-    # return jsonify(serialized_menuitems)
 
 @menuitem_bp.route('/images/menuitem/<path:filename>')
 def serve_menuitem_image(filename):
