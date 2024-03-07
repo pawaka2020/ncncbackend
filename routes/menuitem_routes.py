@@ -57,6 +57,9 @@ def get_menuitems():
     
     return jsonify(menuitem_list)
 
+    # serialized_menuitems = [menuitems.serialize() for menuitem in menuitems]
+    # return jsonify(serialized_menuitems)
+
 @menuitem_bp.route('/images/menuitem/<path:filename>')
 def serve_menuitem_image(filename):
     return send_from_directory('static/images/menuitem/', filename)

@@ -1,8 +1,11 @@
+# model/ingredient.py
+
 from .db import db
 
 class Ingredient(db.Model):
     __tablename__ = 'ingredient'
 
+    # Proprietary fields
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     menuitem_id = db.Column(db.Integer, db.ForeignKey('menuitem.id'))

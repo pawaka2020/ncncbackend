@@ -14,6 +14,8 @@ Set up backlinks for the User class
 5/3/2024
 Set up SMS sending system
 
+7/3/2024
+Implement cartitems in backend
 
 
 

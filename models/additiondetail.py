@@ -1,8 +1,11 @@
+# models/additiondetail.py
+
 from .db import db
 
 class AdditionDetail(db.Model):
     __tablename__ = 'additiondetail'
 
+    # Proprietary fields 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255))
     price = db.Column(db.Float)

@@ -281,10 +281,8 @@ insert into additiondetail (name, price, addition_id) values ('Mandheling', 8, 2
 insert into additiondetail (name, price, addition_id) values ('Less sugar', 0, 21);
 insert into additiondetail (name, price, addition_id) values ('More sugar', 1, 21);
 
-
 SELECT column_name, data_type
 FROM information_schema.columns
 WHERE table_name = 'ingredient';
-
 
 set paging setting to off with this command '\pset pager off'
