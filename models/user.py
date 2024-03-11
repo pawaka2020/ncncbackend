@@ -7,6 +7,7 @@
 
 from datetime import datetime
 from .db import db
+from .cartitem import CartItem
 
 # Define the User model
 class User(db.Model):
@@ -28,7 +29,8 @@ class User(db.Model):
     set_default_address = db.Column(db.Boolean)
 
     # Relationships with classes below it.
-    #cartitem = db.Relationship("CartItem", backref = 'user', lazy=True)
+    cartitem = db.relationship("CartItem", backref = 'user', lazy=True)
+ 
 
 def find_registered_user(phone_number):
     # Query the 'users' table to find a matching entry

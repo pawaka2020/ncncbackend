@@ -1,11 +1,11 @@
-# routes/menuitem_routes.py
+# routes/menuitem/get_menuitems.py
 
 from flask import Blueprint, jsonify, send_from_directory
 from models.menuitem import MenuItem
 
-menuitem_bp = Blueprint('menuitem_bp', __name__)
+get_menuitems_bp = Blueprint('get_menuitems_bp', __name__)
 
-@menuitem_bp.route('/menuitems', methods=['GET'])
+@get_menuitems_bp.route('/get_menuitems', methods=['GET'])
 def get_menuitems():
     menuitems = MenuItem.query.all()
     menuitem_list = []
@@ -53,6 +53,6 @@ def get_menuitems():
         menuitem_list.append(menuitem_dict)
     return jsonify(menuitem_list)
 
-@menuitem_bp.route('/images/menuitem/<path:filename>')
+@get_menuitems_bp.route('/static/images/menuitem/<path:filename>')
 def serve_menuitem_image(filename):
     return send_from_directory('static/images/menuitem/', filename)

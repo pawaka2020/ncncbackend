@@ -1,6 +1,8 @@
 # models/cartitem.py
 
 from .db import db
+from .menuitem import MenuItem
+#from .user import User
 
 class CartItem(db.Model):
     __tablename__ = 'cartitem'
@@ -12,12 +14,11 @@ class CartItem(db.Model):
     menuitem_id = db.Column(db.Integer, db.ForeignKey('menuitem.id'))
     price = db.Column(db.Float)
 
-    # Relationships with classes below it.
-    # This gives me 'AmbiguousForeignKeysError' error
+    # Relationships with classes below it. (IGNORE THIS for now)
     menuitem = db.relationship('MenuItem', backref='cart_item', lazy=True, foreign_keys=[menuitem_id])
 
     # Relationships with classes above it
-    #user = db.Column(db.Integer, db.ForeignKey('users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def serialize(self):
         return {
