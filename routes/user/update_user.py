@@ -59,6 +59,36 @@ update_user_bp = Blueprint('update_user_bp', __name__)
 #     else:
 #         return jsonify({'error': 'User not found'}), 404
 
+def update_cart_items(user, cart_items_data):
+    # Clear existing cart items
+  user.cartitem[:] = []
+
+    # Add new cart items if data is provided
+  if cart_items_data:
+    for item_data in cart_items_data:
+      price = item_data.get('price')
+      quantity = item_data.get('quantity')
+      user.cartitem.append(CartItem(
+        price=price,
+        quantity=quantity
+      ))
+
+def update_cart_items2(user, cart_items_data):
+    # Create a list to hold the new cart items
+    new_cart_items = []
+
+    # Add new cart items if data is provided
+    if cart_items_data:
+        for item_data in cart_items_data:
+            price = item_data.get('price')
+            quantity = item_data.get('quantity')
+            new_cart_items.append(CartItem(
+                price=price,
+                quantity=quantity
+            ))
+
+    return new_cart_items
+
 @update_user_bp.route('/update_user', methods=['POST'])
 def update_user():
     # Parse JSON data from Flutter app
@@ -94,18 +124,27 @@ def update_user():
         user.is_logged_in = new_is_logged_in
         user.new_user = new_new_user
         user.set_default_address = new_set_default_address
-    
-        # Create and append cart items to the user
-        # cart_items_data = data.get('cart_items', [])
-        # for item_data in cart_items_data:
-        #     price = float(item_data.get('price'))
-        #     cart_item = CartItem(price=price)
-        #     user.cartitem.append(cart_item)
 
-        user.cartitem.append(CartItem(price = '20'))
-        user.cartitem.append(CartItem(price = '25'))
-        user.cartitem.append(CartItem(price = '30'))
-
+        # Remove existing cart items
+                # Remove existing cart items
+        # user.cartitem[:] = []
+        # # Check if cart items data is provided
+        # cart_items_data = data.get('cart_items')
+        # if cart_items_data:
+        #   for item_data in cart_items_data:
+        #     price = item_data.get('price')
+        #     quantity = item_data.get('quantity')
+        #     user.cartitem.append(CartItem(
+        #       price=price, 
+        #       quantity=quantity
+        #       )
+        #     )
+        
+        # Update cart items
+        #update_cart_items(user, data.get('cart_items'))
+        # user.cartitem = update_cart_items2(user, data.get('cart_items'))
+        # Update cart items directly
+        user.cartitem = update_cart_items2(user, data.get('cart_items'))
         db.session.commit()
         print("User updated successfully")
         return jsonify({'message': 'User updated successfully'})

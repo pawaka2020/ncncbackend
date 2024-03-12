@@ -45,7 +45,8 @@ def get_users():
         # Retrieve associated cart items for the user
         for cart_item in user.cartitem:
             cart_item_data = {
-                'price': cart_item.price
+                'price' : cart_item.price,
+                'quantity' : cart_item.quantity,
                 # Add more fields if needed
             }
             cart_items.append(cart_item_data)

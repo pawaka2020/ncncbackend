@@ -17,6 +17,7 @@ from routes.menuitem.get_menuitems import get_menuitems_bp
 from routes.verify_email_routes import verify_email_bp
 from routes.verify_email_code_routes import verify_email_code_bp
 #from routes.cartitem_routes import cartitem_bp
+from routes.cartitem.get_cartitem import get_cartitem_bp
 # user
 from routes.user.get_users import get_users_bp
 from routes.user.update_user import update_user_bp
@@ -44,6 +45,8 @@ app.register_blueprint(get_bannernews_bp)
 # menuitem
 #app.register_blueprint(menuitem_bp)
 app.register_blueprint(get_menuitems_bp)
+# cartitem
+app.register_blueprint(get_cartitem_bp)
 #app.register_blueprint(verify_bp)
 #app.register_blueprint(verify_code_bp)
 app.register_blueprint(verify_email_bp)

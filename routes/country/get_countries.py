@@ -1,4 +1,4 @@
-# routes/country/show_countries.py
+# routes/country/get_countries.py
 
 from flask import Blueprint, jsonify
 from models.country import Country
