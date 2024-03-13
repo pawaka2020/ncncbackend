@@ -27,6 +27,9 @@ from utils.send_email import send_email
 #
 from flask import Flask
 from flask_mail import Mail, Message
+#
+from blueprints import user_bp
+from routes.user.add_cart_user import add_cart_user
 
  
 app = Flask(__name__)
@@ -37,23 +40,24 @@ db.init_app(app)
 # country
 app.register_blueprint(get_countries_bp)
 # fullnews
-#app.register_blueprint(fullnews_bp)
+# app.register_blueprint(fullnews_bp)
 app.register_blueprint(get_fullnews_bp)
 # bannernews
-#app.register_blueprint(bannernews_bp)
+# app.register_blueprint(bannernews_bp)
 app.register_blueprint(get_bannernews_bp)
 # menuitem
-#app.register_blueprint(menuitem_bp)
+# app.register_blueprint(menuitem_bp)
 app.register_blueprint(get_menuitems_bp)
 # cartitem
 app.register_blueprint(get_cartitem_bp)
-#app.register_blueprint(verify_bp)
-#app.register_blueprint(verify_code_bp)
+# app.register_blueprint(verify_bp)
+# app.register_blueprint(verify_code_bp)
 app.register_blueprint(verify_email_bp)
 app.register_blueprint(verify_email_code_bp)
 # user
 app.register_blueprint(get_users_bp)
 app.register_blueprint(update_user_bp)
+app.register_blueprint(user_bp)
 
 # cartitem 
 #app.register_blueprint(cartitem_bp)

@@ -25,5 +25,24 @@ class MenuItem(db.Model):
     # Relationships with classes above it.
     cartitem_id = db.Column(db.Integer, db.ForeignKey('cartitem.id'))
     
-    def __repr__(self):
-        return f"<MenuItem {self.id}>"
+    def from_json(data):
+        if data:
+            return MenuItem(
+                title = data.get('title')
+                # other fields (WIP)
+            )
+        return None
+
+    def list_from_json(data):
+        if data:
+            list = []
+            for item_data in data :
+                list.append(MenuItem.from_json(item_data))
+        return None
+
+
+
+
+
+    # def __repr__(self):
+    #     return f"<MenuItem {self.id}>"

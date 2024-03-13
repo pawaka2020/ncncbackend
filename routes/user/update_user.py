@@ -60,7 +60,7 @@ update_user_bp = Blueprint('update_user_bp', __name__)
 #         return jsonify({'error': 'User not found'}), 404
 
 def update_cart_items(user, cart_items_data):
-    # Clear existing cart items
+  # Clear existing cart items
   user.cartitem[:] = []
 
     # Add new cart items if data is provided
@@ -74,6 +74,8 @@ def update_cart_items(user, cart_items_data):
       ))
 
 def update_cart_items2(user, cart_items_data):
+    # I actually want to delete existing 'cartitem' rows that link to this current 'users' row first.
+    # ????
     # Create a list to hold the new cart items
     new_cart_items = []
 
@@ -85,7 +87,7 @@ def update_cart_items2(user, cart_items_data):
             new_cart_items.append(CartItem(
                 price=price,
                 quantity=quantity
-            ))
+        ))
 
     return new_cart_items
 
