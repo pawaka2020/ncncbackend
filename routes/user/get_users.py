@@ -39,12 +39,13 @@ get_users_bp = Blueprint('get_users_bp', __name__)
 def get_users():
     users = User.query.all()
     user_list = []
-    for user in users:
-        cart_items = []
 
+    for user in users:
         # Retrieve associated cart items for the user
+        cart_items = []
         for cart_item in user.cartitem:
             cart_item_data = {
+                'id' : cart_item.id,
                 'price' : cart_item.price,
                 'quantity' : cart_item.quantity,
                 # Add more fields if needed

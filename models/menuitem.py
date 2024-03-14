@@ -38,6 +38,7 @@ class MenuItem(db.Model):
             list = []
             for item_data in data :
                 list.append(MenuItem.from_json(item_data))
+            return list
         return None
 
 

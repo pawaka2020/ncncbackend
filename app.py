@@ -30,6 +30,8 @@ from flask_mail import Mail, Message
 #
 from blueprints import user_bp
 from routes.user.add_cart_user import add_cart_user
+from routes.user.edit_cart_user import edit_cart_user
+from routes.user.delete_cart_user import delete_cart_user
 
  
 app = Flask(__name__)
