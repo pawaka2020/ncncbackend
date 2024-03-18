@@ -29,3 +29,27 @@ Implement cartitems in backend
 
 ----
 
+[
+  {
+    "content": null,
+    "id": 2,
+    "menuitem_id": null,
+    "price": 10.0,
+    "quantity": 1,
+    "user_id": 79
+    'menuitem' : [
+      {
+        'imagepath' : "someimage1",
+        'title' : "Coffee"
+      }
+      {
+        'imagepath' : "someimage2",
+        'title' : "Tea"
+      }
+      {
+        'imagepath' : "someimage3",
+        'title' : "Rice"
+      }
+    ]
+  }
+]

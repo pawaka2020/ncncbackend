@@ -286,3 +286,20 @@ FROM information_schema.columns
 WHERE table_name = 'ingredient';
 
 set paging setting to off with this command '\pset pager off'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

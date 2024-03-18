@@ -3,3 +3,4 @@
 
 PyJWT
 Flask_Mail
+pymongo

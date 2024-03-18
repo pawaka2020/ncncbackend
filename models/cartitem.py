@@ -21,17 +21,69 @@ class CartItem(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     @staticmethod
+    def __from_json(data):
+        menuitems_data = data.get('menuitem')
+        menuitems = [
+            MenuItem(
+                title=item.get('title'),
+                imagepath=item.get('imagepath')
+            )   for item in menuitems_data
+        ]
+        return menuitems
+
+    @staticmethod
     def from_json(data):
         if data:
-            return CartItem(
-                # Proprietary fields
-                id = data.get('id'),
+            menuitem_data = data.get('menuitem')
+
+        # Create a list to hold MenuItem objects
+            menuitems = []
+
+        # Create MenuItem objects and add them to the session
+            if menuitem_data:
+                for item_data in menuitem_data:
+                    menuitem = MenuItem(
+                        imagepath=item_data.get('imagepath'),
+                        title=item_data.get('title')
+                )
+                menuitems.append(menuitem)
+            print("menu title = ", menuitems[0].title)
+        
+            # Create CartItem object
+            cartitem = CartItem(
+                id=data.get('id'),
                 price=data.get('price'),
                 quantity=data.get('quantity'),
-                # Child objects
-                menuitem=MenuItem.list_from_json(data.get('menuitem'))
-        )
+               
+                #menuitem=menuitems  # Associate MenuItem objects with CartItem
+            )
+            if cartitem.menuitem is None:
+                cartitem.menuitem = []
+            # Associate CartItem with MenuItem objects
+            #cartitem.menuitem = menuitems
+            #cartitem.menuitem.append(CartItem(title = 'asdsad'))
+                        # Associate CartItem with MenuItem objects
+            cartitem.menuitem.extend(MenuItem())
         return None
+
+    @staticmethod
+    def list_from_json2(menuitems_data):
+        #print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+        menuitems = []
+        if menuitems_data:
+
+            for menuitem_data in menuitems_data:
+                print("title = ", menuitem_data.get('title'))
+                menuitem = MenuItem(
+                    imagepath=menuitem_data.get('image_path'),
+                    title=menuitem_data.get('title')
+                    # Add other fields if necessary
+                )
+                menuitems.append(menuitem)
+        return menuitems
+
+
+
 
     @staticmethod
     def list_from_json(data):

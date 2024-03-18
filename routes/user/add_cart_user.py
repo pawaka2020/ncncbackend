@@ -42,7 +42,7 @@ def add_cart_user():
 
     user_id_ = json.get('user_id')
     cartitem_ = CartItem.from_json(json)
-
+    
     user = User.query.filter_by(user_id=user_id_).first()
     if not user:
         return jsonify({'error': 'User not found'}), 404
