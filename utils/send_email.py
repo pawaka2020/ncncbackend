@@ -13,7 +13,7 @@ app.config['MAIL_DEFAULT_SENDER'] = 'ncnctest@yahoo.com'
 
 mail = Mail(app)
 
-@app.route('/send_email')
+#@app.route('/send_email')
 def send_email():
     print("Email has been sent")
     msg = Message('Hello from Flask-Mail', recipients=['rinor85@gmail.com'])
@@ -24,8 +24,8 @@ def send_email():
 
         # Send the email
         #mail.send(msg)
-        print("Email has been sent222")
-        return 'Email sent successfully!'
+        print("Email has been sent")
+        return 'Email sent successfully'
     except Exception as e:
         return str(e)
 

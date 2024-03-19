@@ -39,18 +39,21 @@ from blueprints import fullnews_bp
 from blueprints import bannernews_bp
 from blueprints import menuitem_bp
 from blueprints import user_bp
+from blueprints import users_bp
 # Routes
 from routes.country.get_countries import get_countries
 from routes.fullnews.get_fullnews import get_fullnews
 from routes.bannernews.get_bannernews import get_bannernews
 from routes.menuitem.get_menuitems import get_menuitems
+from routes.users.get_users import get_users
+from routes.users.request_code import request_code
+from routes.users.verify_code import verify_code
 
 app = Flask(__name__)
 
 # postgreSQL. I will disable this later
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:ylteicz@localhost/mydatabase'
 db.init_app(app)
-
 
 # Register blueprints
 # country
@@ -80,6 +83,7 @@ app.register_blueprint(country_bp)
 app.register_blueprint(fullnews_bp)
 app.register_blueprint(bannernews_bp)
 app.register_blueprint(menuitem_bp)
+app.register_blueprint(users_bp)
 
 # cartitem 
 #app.register_blueprint(cartitem_bp)
