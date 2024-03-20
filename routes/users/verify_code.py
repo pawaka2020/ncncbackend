@@ -10,6 +10,7 @@ from config import SECRET_KEY
 from config import TOKEN_LENGTH
 from config import TOKEN_EXPIRATION_HOURS
 from blueprints import users_bp
+from models.mongodb.db import db
 #
 import random
 import string
@@ -38,7 +39,7 @@ def verify_code():
         auth_token = None
 
         user = User.query_by_email(email)
-
+        #user = db.users.find_one({'email': email})
         if (user):
             print("User found. Creating auth token based on existing user")
             auth_token = create_token_existing_user(user)
@@ -93,7 +94,7 @@ def create_token_new_user(email):
     # Encode the payload into a JWT token using a secret key
     auth_token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
-    print("Token created. Creating new user in postgreSQL table")
+    print("Token created. Creating new user")
     User.create_new(random_user_id, email)
 
     # finally we return it

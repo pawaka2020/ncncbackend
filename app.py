@@ -14,13 +14,13 @@ from models.db import db
 #from routes.menuitem.get_menuitems import get_menuitems_bp
 #from routes.verify_routes import verify_bp 
 #from routes.verify_code_routes import verify_code_bp
-from routes.verify_email_routes import verify_email_bp
-from routes.verify_email_code_routes import verify_email_code_bp
+#from routes.verify_email_routes import verify_email_bp
+#from routes.verify_email_code_routes import verify_email_code_bp
 #from routes.cartitem_routes import cartitem_bp
-from routes.cartitem.get_cartitem import get_cartitem_bp
+#from routes.cartitem.get_cartitems import get_cartitems
 # user
-from routes.user.get_users import get_users_bp
-from routes.user.update_user import update_user_bp
+#from routes.user.get_users import get_users_bp
+#from routes.user.update_user import update_user_bp
 #utils
 from utils.send_email import send_email
 #from models.user import find_registered_user
@@ -38,8 +38,9 @@ from blueprints import country_bp
 from blueprints import fullnews_bp
 from blueprints import bannernews_bp
 from blueprints import menuitem_bp
-from blueprints import user_bp
+#from blueprints import user_bp
 from blueprints import users_bp
+from blueprints import cartitem_bp
 # Routes
 from routes.country.get_countries import get_countries
 from routes.fullnews.get_fullnews import get_fullnews
@@ -48,6 +49,8 @@ from routes.menuitem.get_menuitems import get_menuitems
 from routes.users.get_users import get_users
 from routes.users.request_code import request_code
 from routes.users.verify_code import verify_code
+from routes.cartitem.get_cartitems import get_cartitems
+from routes.cartitem.add_cartitem import add_cartitem
 
 app = Flask(__name__)
 
@@ -68,15 +71,15 @@ db.init_app(app)
 # app.register_blueprint(menuitem_bp)
 #app.register_blueprint(get_menuitems_bp)
 # cartitem
-app.register_blueprint(get_cartitem_bp)
+#app.register_blueprint(get_cartitem_bp)
 # app.register_blueprint(verify_bp)
 # app.register_blueprint(verify_code_bp)
-app.register_blueprint(verify_email_bp)
-app.register_blueprint(verify_email_code_bp)
+#app.register_blueprint(verify_email_bp)
+#app.register_blueprint(verify_email_code_bp)
 # user
-app.register_blueprint(get_users_bp)
-app.register_blueprint(update_user_bp)
-app.register_blueprint(user_bp)
+#app.register_blueprint(get_users_bp)
+#app.register_blueprint(update_user_bp)
+#app.register_blueprint(user_bp)
 ##### blueprint (MONGODB)
 # country
 app.register_blueprint(country_bp)
@@ -84,6 +87,8 @@ app.register_blueprint(fullnews_bp)
 app.register_blueprint(bannernews_bp)
 app.register_blueprint(menuitem_bp)
 app.register_blueprint(users_bp)
+app.register_blueprint(cartitem_bp)
+
 
 # cartitem 
 #app.register_blueprint(cartitem_bp)

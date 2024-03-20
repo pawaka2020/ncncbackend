@@ -11,9 +11,10 @@ class MenuItem:
         self.price = price
         self.imagepath = imagepath
         self.available = available
+        self.userreviews = userreviews
         self.additions = additions
         self.ingredients = ingredients
-        self.userreviews = userreviews
+        
 
     def save(self):
         db.menuitems.insert_one({
