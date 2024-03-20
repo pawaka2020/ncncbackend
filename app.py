@@ -51,6 +51,8 @@ from routes.users.request_code import request_code
 from routes.users.verify_code import verify_code
 from routes.cartitem.get_cartitems import get_cartitems
 from routes.cartitem.add_cartitem import add_cartitem
+from routes.cartitem.delete_cartitem import delete_cartitem
+from routes.cartitem.edit_cartitem import edit_cartitem
 
 app = Flask(__name__)
 
