@@ -11,6 +11,7 @@ def get_users():
     users_list = list(db['users'].find({}))
 
     result = [{
+        'user_id': user['user_id'],
         'address': user['address'],
         'birthday': user['birthday'],
         'cart_items': user['cart_items'],
@@ -18,14 +19,13 @@ def get_users():
         'coins': user['coins'],
         'email': user['email'],
         'guest': user['guest'],
-        'id': user['id'],
         'is_logged_in': user['is_logged_in'],
         'name': user['name'],
         'new_user': user['new_user'],
         'phone_number': user['phone_number'],
         'profile_image': user['profile_image'],
         'set_default_address': user['set_default_address'],
-        'user_id': user['user_id']
+        
     } for user in users_list]
 
     return jsonify(result)

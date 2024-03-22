@@ -2,13 +2,10 @@
 
 from flask import Blueprint, request, jsonify
 from common import email_codes_dict
-#from models.user import find_user_by_email
-#from models.user import create_new_user
-#from models.user import flip_user_log_status
-from models.mongodb.user import User
 from config import SECRET_KEY
 from config import TOKEN_LENGTH
 from config import TOKEN_EXPIRATION_HOURS
+from models.mongodb.user import User
 from blueprints import users_bp
 from models.mongodb.db import db
 #
@@ -102,18 +99,18 @@ def create_token_new_user(email):
 
 def create_token_existing_user(user):
     payload = {
-        "user_id" : user.user_id,
-        "name" : user.name,
-        "email" : user.email,
-        "birthday" : user.birthday,
-        "phone_number" : user.phone_number,
-        "address" : user.address,
-        "profile_image" : user.profile_image,
-        "coins" : user.coins,
-        "guest" : user.guest,
-        "is_logged_in" : user.is_logged_in,
-        "new_user" : user.new_user,
-        "set_default_address" : user.set_default_address,
+        "user_id" : user['user_id'],
+        "name" : user['name'],
+        "email" : user['email'],
+        "birthday" : user['birthday'].strftime("%Y-%m-%d"), #Error: Object of type datetime is not JSON serializable
+        "phone_number" : user['phone_number'],
+        "address" : user['address'],
+        "profile_image" : user['profile_image'],
+        "coins" : user['coins'],
+        "guest" : user['guest'],
+        "is_logged_in" : user['is_logged_in'],
+        "new_user" : user['new_user'],
+        "set_default_address" : user['set_default_address'],
         # backlinks to objects-specific params (TODO later)
         # token-specific params
         "iss" : 'ncnc_backend', 
@@ -128,8 +125,9 @@ def create_token_existing_user(user):
     # Encode the payload into a JWT token using a secret key
     auth_token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
-    print("Token created. Changing login status of existing user to true")
-    User.flip_user_log_status(user)
+    print("Token created. Changing login status of existing user id = ", user['user_id'], " to true")
+    User.flip_log_status(user['user_id'])
+    #User.flip_user_log_status(user)
 
     # finally we return it
     return auth_token

@@ -72,11 +72,11 @@ class User:
     # Finds 'User' object with matching'id', 
     # Flips object's 'is_logged_in' value to its opposite end ie if originally true then false, if false then true
     @staticmethod
-    def flip_log_status(id):
-        user = db['users'].find_one({'id': id})
+    def flip_log_status(user_id):
+        user = db['users'].find_one({'user_id': user_id})
         if user:
             new_log_status = not user['is_logged_in']
-            db['users'].update_one({'id': id}, {'$set': {'is_logged_in': new_log_status}})
+            db['users'].update_one({'user_id': user_id}, {'$set': {'is_logged_in': new_log_status}})
 
 
 

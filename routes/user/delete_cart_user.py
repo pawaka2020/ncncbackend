@@ -23,9 +23,8 @@ def delete_cart_user():
     cartitem = CartItem.query.filter_by(id=id_, user_id=user.id).first()
     if not cartitem:
         return jsonify({'error': 'Cart item not found for the user'}), 404
-
+    # Delete the cart item associated with the user
     try:
-        # Delete the cart item associated with the user
         db.session.delete(cartitem)
         db.session.commit()
         return jsonify({'message': 'Cart item deleted successfully'}), 200

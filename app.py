@@ -49,6 +49,8 @@ from routes.menuitem.get_menuitems import get_menuitems
 from routes.users.get_users import get_users
 from routes.users.request_code import request_code
 from routes.users.verify_code import verify_code
+from routes.users.logoff import logoff
+from routes.users.update_user import update_user
 from routes.cartitem.get_cartitems import get_cartitems
 from routes.cartitem.add_cartitem import add_cartitem
 from routes.cartitem.delete_cartitem import delete_cartitem
