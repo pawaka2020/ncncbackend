@@ -1,6 +1,6 @@
 # routes/users/get_users.py
 
-from flask import Flask, Blueprint, jsonify
+from flask import Flask, Blueprint, jsonify, send_from_directory
 from models.mongodb.db import db
 from models.mongodb.user import User
 from blueprints import users_bp
@@ -30,3 +30,6 @@ def get_users():
 
     return jsonify(result)
 
+@users_bp.route('/static/images/bannernews/<path:filename>')
+def serve_user_image(filename):
+    return send_from_directory('static/images/bannernews/', filename)

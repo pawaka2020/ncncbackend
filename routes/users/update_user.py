@@ -4,6 +4,8 @@ from flask import Blueprint, request, jsonify
 from models.mongodb.user import User
 from blueprints import users_bp
 from models.mongodb.db import db
+import os
+import base64
 
 # Update user in 'users' collection
 @users_bp.route('/api/update_user', methods=['POST'])
@@ -13,7 +15,10 @@ def update_user():
 
     # Find the user in the database
     user = db.users.find_one({'user_id': json_data.get('user_id')})
-
+    # Extract image base64 data from JSON
+    image_base64 = json_data.get('image_base_64')
+    
+    store_image(image_base64, json_data.get('user_id'))
     if user:
         # Update user fields with new data from JSON
         user['name'] = json_data.get('name')
@@ -28,9 +33,73 @@ def update_user():
         user['new_user'] = json_data.get('new_user')
         user['set_default_address'] = json_data.get('set_default_address')
 
+        # child objects
+        user['cart_items'] = json_data.get('cart_items')
+
         # Save the updated user object back to the database
         db.users.update_one({'user_id': json_data.get('user_id')}, {'$set': user})
+
+        #save_profile_image(user['user_id'], user['profile_image'])
 
         return jsonify({'message': 'User updated successfully'}), 200
     else:
         return jsonify({'error': 'User not found'}), 404
+
+def store_image(image_base64, user_id):
+    #print("sadasdsadsa")
+    image_bytes = base64.b64decode(image_base64)
+    directory = os.path.join('D:', 'python', 'ncncbackend', 'static', 'images', 'users', str(user_id))
+
+    if (image_bytes):
+        # Create directory if it doesn't exist
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+        # Define file path for profile image
+        file_path = os.path.join(directory, 'profile_image.jpg')
+
+        # Write image bytes to file
+        with open(file_path, 'wb') as f:
+            f.write(image_bytes)
+        print('Profile image saved successfully')
+    else:
+        print('Profile image saving failed')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# saves profile image to the backend
+# grabs only the .jpg file name from 'profile_image'
+# save location: "D:\python\ncncbackend\static\images\users\user_id\profile_image"
+def save_profile_image(user_id, profile_image):
+    # Grab the file name and extension from profile_image
+    _, file_name = os.path.split(profile_image)
+    file_name, ext = os.path.splitext(file_name)
+
+    # Define the directory path to save the profile image
+    directory = os.path.join('D:', 'python', 'ncncbackend', 'static', 'images', 'users', str(user_id))
+
+    # Create the directory if it doesn't exist
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+    # Define the file path for the profile image
+    file_path = os.path.join(directory, f"profile_image{ext}")
+
+    # Write the profile image data to the file
+    with open(file_path, 'wb') as f:
+        f.write(profile_image.encode())  # Assuming profile_image is a base64 encoded string
+
+    print("Profile image saved successfully at:", file_path)

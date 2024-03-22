@@ -102,7 +102,8 @@ def create_token_existing_user(user):
         "user_id" : user['user_id'],
         "name" : user['name'],
         "email" : user['email'],
-        "birthday" : user['birthday'].strftime("%Y-%m-%d"), #Error: Object of type datetime is not JSON serializable
+        #"birthday": user['birthday'].strftime("%Y-%m-%d%H:%M:%S.%f"),
+        "birthday": user['birthday'],
         "phone_number" : user['phone_number'],
         "address" : user['address'],
         "profile_image" : user['profile_image'],
