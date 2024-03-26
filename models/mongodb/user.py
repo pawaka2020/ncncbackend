@@ -6,9 +6,9 @@ from datetime import datetime
 class User:
     # Constructor and fields definition
     def __init__(self, address="", birthday="1900-01-01", cart_items=[], orders=[], coins=0, email="", guest=False, is_logged_in=True, name="User", new_user=True, phone_number="", profile_image="", set_default_address=False, user_id=""):
+        # Proprietary fields
         self.address = address
         self.birthday = datetime.strptime("1900-01-01", "%Y-%m-%d")
-        self.cart_items = cart_items
         self.orders = orders
         self.coins = coins
         self.email = email
@@ -20,6 +20,8 @@ class User:
         self.profile_image = profile_image
         self.set_default_address = set_default_address
         self.user_id = user_id
+        # Child objects
+        self.cart_items = cart_items
 
     # Creates new 'User' object with provided 'user_id' and 'email'
     # Then writes this new object in 'users' collection

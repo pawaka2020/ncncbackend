@@ -98,12 +98,14 @@ def create_token_new_user(email):
     return auth_token
 
 def create_token_existing_user(user):
+
+    test_birthday = print("test birthday = ", user['birthday'].strftime("%Y-%m-%d%H:%M:%S.%f"))
+
     payload = {
         "user_id" : user['user_id'],
         "name" : user['name'],
         "email" : user['email'],
-        #"birthday": user['birthday'].strftime("%Y-%m-%d%H:%M:%S.%f"),
-        "birthday": user['birthday'],
+        "birthday": user['birthday'].strftime("%Y-%m-%d"),
         "phone_number" : user['phone_number'],
         "address" : user['address'],
         "profile_image" : user['profile_image'],
@@ -112,7 +114,8 @@ def create_token_existing_user(user):
         "is_logged_in" : user['is_logged_in'],
         "new_user" : user['new_user'],
         "set_default_address" : user['set_default_address'],
-        # backlinks to objects-specific params (TODO later)
+        # child objects (TODO)
+        "cart_items": user['cart_items'],  
         # token-specific params
         "iss" : 'ncnc_backend', 
         "aud" : "ncnc_mobile_app", 
