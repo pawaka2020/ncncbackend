@@ -28,19 +28,18 @@ from utils.send_email import send_email
 from flask import Flask
 from flask_mail import Mail, Message
 #
-
 from routes.user.add_cart_user import add_cart_user
 from routes.user.edit_cart_user import edit_cart_user
 from routes.user.delete_cart_user import delete_cart_user
-#
 # Blueprints
 from blueprints import country_bp
 from blueprints import fullnews_bp
 from blueprints import bannernews_bp
 from blueprints import menuitem_bp
-#from blueprints import user_bp
+# from blueprints import user_bp
 from blueprints import users_bp
 from blueprints import cartitem_bp
+from blueprints import order_bp
 # Routes
 from routes.country.get_countries import get_countries
 from routes.fullnews.get_fullnews import get_fullnews
@@ -55,6 +54,8 @@ from routes.cartitem.get_cartitems import get_cartitems
 from routes.cartitem.add_cartitem import add_cartitem
 from routes.cartitem.delete_cartitem import delete_cartitem
 from routes.cartitem.edit_cartitem import edit_cartitem
+from routes.order.add_order import add_order
+from routes.order.delete_order import delete_order
 
 app = Flask(__name__)
 
@@ -92,6 +93,7 @@ app.register_blueprint(bannernews_bp)
 app.register_blueprint(menuitem_bp)
 app.register_blueprint(users_bp)
 app.register_blueprint(cartitem_bp)
+app.register_blueprint(order_bp)
 
 
 # cartitem 

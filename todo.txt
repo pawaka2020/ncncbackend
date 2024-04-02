@@ -53,3 +53,6 @@ Implement cartitems in backend
     ]
   }
 ]
+
+# don't recreate images, try to link it to the 'online' backend in some way.
+# make a proper 'edit cart' method for backend

@@ -2,9 +2,9 @@
 
 from flask import Flask, Blueprint, jsonify, request
 from models.mongodb.db import db
-from models.mongodb.cartitem import CartItem
-from models.mongodb.menuitem import MenuItem
-from models.mongodb.user import User
+# from models.mongodb.cartitem import CartItem
+# from models.mongodb.menuitem import MenuItem
+# from models.mongodb.user import User
 from blueprints import cartitem_bp
 
 # Adds a CartItem object to an existing entry in 'users' collection
@@ -13,16 +13,21 @@ def add_cartitem():
     json = request.json
 
     user = db.users.find_one({'user_id': json.get('user_id')})
+    print("user id  in add_cartitem = ", json.get('user_id'))
+
     if user:
+        # append with all fields, even child objects
         user['cart_items'].append({
-                'id': json.get('id'),
-                'quantity': json.get('quantity'),
-                'price': json.get('price'),
-                'menuitem_id': json.get('menuitem_id'),
-                'menuitem': json.get('menuitem')
+            'id': json.get('id'),
+            'quantity': json.get('quantity'),
+            'price': json.get('price'),
+            'menuitem_id': json.get('menuitem_id'),
+            'menuitem': json.get('menuitem')
         })
+
         # Update the user in the collection
         db.users.update_one({'user_id': json.get('user_id')}, {'$set': user})
         return jsonify({'message': 'CartItem added successfully'}), 200
     else:
+        print("Error: User id does not match JSON")
         return jsonify({'message': 'User not found'}), 404

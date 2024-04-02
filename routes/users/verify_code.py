@@ -77,6 +77,7 @@ def create_token_new_user(email):
         "new_user" : True,
         "set_default_address" : False,
         # backlinks to objects-specific params (TODO later)
+        "cart_items": [],
         # token-specific params
         "iss" : 'ncnc_backend', 
         "aud" : "ncnc_mobile_app", 
@@ -99,7 +100,7 @@ def create_token_new_user(email):
 
 def create_token_existing_user(user):
 
-    test_birthday = print("test birthday = ", user['birthday'].strftime("%Y-%m-%d%H:%M:%S.%f"))
+    #test_birthday = print("test birthday = ", user['birthday'].strftime("%Y-%m-%d%H:%M:%S.%f"))
 
     payload = {
         "user_id" : user['user_id'],
@@ -115,11 +116,16 @@ def create_token_existing_user(user):
         "new_user" : user['new_user'],
         "set_default_address" : user['set_default_address'],
         # child objects (TODO)
-        "cart_items": user['cart_items'],  
+        "cart_items": user['cart_items'],
+        #"cart_items": [],  
         # token-specific params
         "iss" : 'ncnc_backend', 
         "aud" : "ncnc_mobile_app", 
     }
+
+    print("cart_items length =", len(user['cart_items']))
+
+
     # Set the token expiration time to 1 hour from the current time
     exp_time = datetime.datetime.utcnow() + datetime.timedelta(TOKEN_EXPIRATION_HOURS)
 
