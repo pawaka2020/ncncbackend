@@ -41,6 +41,8 @@ def add_order():
             'cartItems': json['cartItems'],
             'vouchers': json['vouchers'],
         })
+        # cart item emptying    
+        user['cart_items'] = []
         # Update the user in the collection
         db.users.update_one({'user_id': json.get('user_id')}, {'$set': user})
         return jsonify({'message': 'Order added successfully'}), 200

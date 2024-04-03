@@ -20,6 +20,7 @@ def delete_cartitem():
     
     # Find user in 'users' collection using matching 'user_id'
     user = db.users.find_one({'user_id': user_id})
+    
     if user:
         # Find 'cart_items' in 'users' collection using matching 'id'
         cart_items = user.get('cart_items', [])
