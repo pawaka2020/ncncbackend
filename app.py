@@ -40,6 +40,7 @@ from blueprints import menuitem_bp
 from blueprints import users_bp
 from blueprints import cartitem_bp
 from blueprints import order_bp
+from blueprints import voucher_bp
 # Routes
 from routes.country.get_countries import get_countries
 from routes.fullnews.get_fullnews import get_fullnews
@@ -56,6 +57,7 @@ from routes.cartitem.delete_cartitem import delete_cartitem
 from routes.cartitem.edit_cartitem import edit_cartitem
 from routes.order.add_order import add_order
 from routes.order.delete_order import delete_order
+from routes.voucher.get_vouchers import get_vouchers
 
 app = Flask(__name__)
 
@@ -86,6 +88,7 @@ db.init_app(app)
 #app.register_blueprint(update_user_bp)
 #app.register_blueprint(user_bp)
 ##### blueprint (MONGODB)
+
 # country
 app.register_blueprint(country_bp)
 app.register_blueprint(fullnews_bp)
@@ -94,7 +97,7 @@ app.register_blueprint(menuitem_bp)
 app.register_blueprint(users_bp)
 app.register_blueprint(cartitem_bp)
 app.register_blueprint(order_bp)
-
+app.register_blueprint(voucher_bp)
 
 # cartitem 
 #app.register_blueprint(cartitem_bp)

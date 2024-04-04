@@ -5,7 +5,7 @@ from datetime import datetime
 
 class User:
     # Constructor and fields definition
-    def __init__(self, address="", birthday="1900-01-01", cart_items=[], orders=[], coins=0, email="", guest=False, is_logged_in=True, name="User", new_user=True, phone_number="", profile_image="", set_default_address=False, user_id=""):
+    def __init__(self, address="", birthday="1900-01-01", cart_items=[], vouchers=[], orders=[], coins=0, email="", guest=False, is_logged_in=True, name="User", new_user=True, phone_number="", profile_image="", set_default_address=False, user_id=""):
         # Proprietary fields
         self.address = address
         self.birthday = datetime.strptime("1900-01-01", "%Y-%m-%d")
@@ -22,6 +22,7 @@ class User:
         self.user_id = user_id
         # Child objects
         self.cart_items = cart_items
+        self.vouchers = vouchers
 
     # Creates new 'User' object with provided 'user_id' and 'email'
     # Then writes this new object in 'users' collection

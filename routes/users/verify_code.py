@@ -16,6 +16,7 @@ import hashlib
 import json
 import datetime
 import jwt
+from routes.voucher.get_vouchers import get_vouchers
 
 @users_bp.route('/api/verify_code', methods=['POST'])
 def verify_code():
@@ -78,6 +79,7 @@ def create_token_new_user(email):
         "set_default_address" : False,
         # backlinks to objects-specific params (TODO later)
         "cart_items": [],
+        "vouchers": get_vouchers(),
         # token-specific params
         "iss" : 'ncnc_backend', 
         "aud" : "ncnc_mobile_app", 
