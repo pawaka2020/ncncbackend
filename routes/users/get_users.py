@@ -15,6 +15,7 @@ def get_users():
         'address': user['address'],
         'birthday': user['birthday'],
         'cart_items': user['cart_items'],
+        'vouchers' : user['vouchers'],
         'orders': user['orders'],
         'coins': user['coins'],
         'email': user['email'],

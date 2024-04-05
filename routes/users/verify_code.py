@@ -16,7 +16,7 @@ import hashlib
 import json
 import datetime
 import jwt
-from routes.voucher.get_vouchers import get_vouchers
+from routes.voucher.get_vouchers import get_vouchers2
 
 @users_bp.route('/api/verify_code', methods=['POST'])
 def verify_code():
@@ -79,7 +79,8 @@ def create_token_new_user(email):
         "set_default_address" : False,
         # backlinks to objects-specific params (TODO later)
         "cart_items": [],
-        "vouchers": get_vouchers(),
+        #"vouchers": [] , 
+        "vouchers" : get_vouchers2(),
         # token-specific params
         "iss" : 'ncnc_backend', 
         "aud" : "ncnc_mobile_app", 
@@ -94,7 +95,7 @@ def create_token_new_user(email):
     # Encode the payload into a JWT token using a secret key
     auth_token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
-    print("Token created. Creating new user")
+    print("Token created. Creating new user.")
     User.create_new(random_user_id, email)
 
     # finally we return it
@@ -118,7 +119,8 @@ def create_token_existing_user(user):
         "new_user" : user['new_user'],
         "set_default_address" : user['set_default_address'],
         # child objects (TODO)
-        "cart_items": user['cart_items'],
+        "cart_items" : user['cart_items'],
+        "vouchers" : user['vouchers'],
         #"cart_items": [],  
         # token-specific params
         "iss" : 'ncnc_backend', 

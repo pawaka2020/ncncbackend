@@ -23,3 +23,16 @@ def get_vouchers():
 @voucher_bp.route('/static/images/voucher/<path:filename>')
 def serve_voucher_image(filename):
     return send_from_directory('static/images/voucher/', filename)
+
+# Function to fetch vouchers specifically for create_token_new_user
+def get_vouchers2():
+    vouchers_list = list(db['vouchers'].find({}))
+    result = [{
+        'voucher_id': voucher['voucher_id'],
+        'image': voucher['image'],
+        'priceDiscount': voucher['priceDiscount'],
+        'priceDeduct': voucher['priceDeduct'],
+        'expiryDate': voucher['expiryDate'],
+        'activated': voucher['activated'],
+    } for voucher in vouchers_list]
+    return result

@@ -2,6 +2,7 @@
 
 from .db import db
 from datetime import datetime
+from routes.voucher.get_vouchers import get_vouchers2
 
 class User:
     # Constructor and fields definition
@@ -32,6 +33,7 @@ class User:
             'address': '',
             'birthday': datetime.strptime("1900-01-01", "%Y-%m-%d"), 
             'cart_items': [],
+            'vouchers' : get_vouchers2(),
             'orders': [],
             'coins': 0,
             'email': email,
@@ -81,16 +83,6 @@ class User:
             new_log_status = not user['is_logged_in']
             db['users'].update_one({'user_id': user_id}, {'$set': {'is_logged_in': new_log_status}})
 
-
-
-
-
-
-
-
-
-
-
     # Method to save user data to the database (implementation may vary based on the database used)
     #db['countries'].
     def save(self):
@@ -111,5 +103,3 @@ class User:
             'set_default_address': self.set_default_address,
             'user_id': self.user_id
         })
-
-    

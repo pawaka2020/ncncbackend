@@ -52,6 +52,19 @@ def get_users():
             }
             cart_items.append(cart_item_data)
 
+        vouchers = []
+        for voucher in vouchers:
+            voucher_data = {
+                'voucher_id' : voucher.voucher_id,
+                'image' : voucher.image,
+                'priceDiscount' : voucher.priceDiscount,
+                'priceDeduct' : voucher.priceDeduct,
+                'expiryDate' : voucher.expiryDate,
+                'activated' : voucher.activated,
+            }
+            vouchers.append(voucher_data)
+            print("TODO")
+
         user_data = {
             'id': user.id,
             'user_id': user.user_id,
@@ -66,7 +79,8 @@ def get_users():
             'is_logged_in': user.is_logged_in,
             'new_user': user.new_user,
             'set_default_address': user.set_default_address,
-            'cart_items': cart_items
+            'carst_items': cart_items,
+            'vouchers': vouchers,
             # Add more fields as needed
         }
         user_list.append(user_data)
