@@ -1,5 +1,7 @@
 from flask import Flask
 from models.db import db
+from config import IPV4_ADDRESS
+
 # routes
 # countries
 #from routes.country.get_countries import get_countries_bp
@@ -110,4 +112,4 @@ if __name__ == '__main__':
     with app.app_context():  
         # Use this space to test your functions
         print("")
-    app.run(host='192.168.1.21', debug=True)
+    app.run(host=IPV4_ADDRESS, debug=True)

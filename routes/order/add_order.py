@@ -1,5 +1,4 @@
 # routes/order/add_order.py
-
 from flask import Flask, Blueprint, jsonify, request
 from models.mongodb.db import db
 # from models.mongodb.order import Order
@@ -44,6 +43,10 @@ def add_order():
         # cart item emptying    
         user['cart_items'] = []
         # Update the user in the collection
+        user['vouchers'] = []
+        user['vouchers'] = json['user_vouchers']
+
+
         db.users.update_one({'user_id': json.get('user_id')}, {'$set': user})
         return jsonify({'message': 'Order added successfully'}), 200
     else:
