@@ -46,7 +46,6 @@ def add_order():
         user['vouchers'] = []
         user['vouchers'] = json['user_vouchers']
 
-
         db.users.update_one({'user_id': json.get('user_id')}, {'$set': user})
         return jsonify({'message': 'Order added successfully'}), 200
     else:

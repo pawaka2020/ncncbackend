@@ -28,9 +28,8 @@ def get_users():
         'set_default_address': user['set_default_address'],
         
     } for user in users_list]
-
     return jsonify(result)
 
-@users_bp.route('/static/images/bannernews/<path:filename>')
+@users_bp.route('/static/images/users/<path:filename>')
 def serve_user_image(filename):
-    return send_from_directory('static/images/bannernews/', filename)
+    return send_from_directory('static/images/users/', filename)
