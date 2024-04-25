@@ -1,6 +1,6 @@
 # requirements.txt
 # Execute this command line 'pip install -r requirements.txt' once after downloading this Flask app to install all required libraries 
-
+Flask
 PyJWT
 Flask_Mail
 pymongo

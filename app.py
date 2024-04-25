@@ -1,19 +1,23 @@
+# app.py
 from config import IPV4_ADDRESS
-#utils
-from utils.send_email import send_email
-#from models.user import find_registered_user
+
+# Library imports
 from flask import Flask
 from flask_mail import Mail, Message
+
+# Utils (not used yet)
+from utils.send_email import send_email
+
 # Blueprints
 from blueprints import country_bp
 from blueprints import fullnews_bp
 from blueprints import bannernews_bp
 from blueprints import menuitem_bp
-# from blueprints import user_bp
 from blueprints import users_bp
 from blueprints import cartitem_bp
 from blueprints import order_bp
 from blueprints import voucher_bp
+
 # Routes
 from routes.country.get_countries import get_countries
 from routes.fullnews.get_fullnews import get_fullnews
@@ -32,12 +36,13 @@ from routes.order.add_order import add_order
 from routes.order.delete_order import delete_order
 from routes.voucher.get_vouchers import get_vouchers
 
+# Create new MongoDB collections for first-time run.
+from models.mongodb.create_collections import create_collections
+
+# Defines this app as a Flask application.
 app = Flask(__name__)
 
-# postgreSQL. I will disable this later
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:ylteicz@localhost/mydatabase'
-
-# country
+# Blueprint registrations to enable usage of route functions defined under each blueprint
 app.register_blueprint(country_bp)
 app.register_blueprint(fullnews_bp)
 app.register_blueprint(bannernews_bp)
@@ -47,8 +52,7 @@ app.register_blueprint(cartitem_bp)
 app.register_blueprint(order_bp)
 app.register_blueprint(voucher_bp)
 
-# http://192.168.1.40:5000
-
+# Main route that launches the backend at IPV4_ADDRESS defined at config.py
 @app.route('/')
 def hello_world():
     return 'NCNC backend'
@@ -57,4 +61,5 @@ if __name__ == '__main__':
     with app.app_context():  
         # Use this space to test your functions
         print("")
+        create_collections()
     app.run(host=IPV4_ADDRESS, debug=True)

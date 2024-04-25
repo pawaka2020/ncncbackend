@@ -5,5 +5,6 @@
 
 from pymongo import MongoClient
 
-client = MongoClient('mongodb://localhost:27017/')
+MONGODB_HOST = 'mongodb://localhost:27017/'
+client = MongoClient(MONGODB_HOST)
 db = client['ncncdatabase']

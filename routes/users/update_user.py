@@ -6,7 +6,9 @@ from blueprints import users_bp
 from models.mongodb.db import db
 import os
 import base64
+from datetime import datetime
 
+# fix this. store image should come after user verification
 # Update user in 'users' collection
 @users_bp.route('/api/update_user', methods=['POST'])
 def update_user():
@@ -16,14 +18,11 @@ def update_user():
     # Find the user in the database
     user = db.users.find_one({'user_id': json_data.get('user_id')})
 
-    # Extract image base64 data from JSON    
-    store_image(json_data.get('image_base_64'), json_data.get('user_id'))
-
     if user:
         # Update user fields with new data from JSON
         user['name'] = json_data.get('name')
         user['email'] = json_data.get('email')
-        user['birthday'] = json_data.get('birthday')
+        user['birthday'] = datetime.strptime(json_data.get('birthday').split('T')[0], "%Y-%m-%d")
         user['phone_number'] = json_data.get('phone_number')
         user['address'] = json_data.get('address')
         user['profile_image'] = json_data.get('profile_image')
@@ -38,6 +37,9 @@ def update_user():
 
         # Save the updated user object back to the database
         db.users.update_one({'user_id': json_data.get('user_id')}, {'$set': user})
+
+        # Extract image base64 data from JSON    
+        store_image(json_data.get('image_base_64'), json_data.get('user_id'))
 
         return jsonify({'message': 'User updated successfully'}), 200
     else:
