@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "660d14609ec2e9608dab79ad"
+  },
+  "voucher_id": 0,
+  "image": "static/images/voucher/vouchertest1.png",
+  "activated": false,
+  "expiryDate": "2023-12-31T00:00:00.000",
+  "priceDeduct": 5,
+  "priceDiscount": 1
+},
+{
+  "_id": {
+    "$oid": "660d14609ec2e9608dab79ae"
+  },
+  "voucher_id": 1,
+  "image": "static/images/voucher/vouchertest2.png",
+  "activated": false,
+  "expiryDate": "2025-06-14T00:00:00.000",
+  "priceDeduct": 0,
+  "priceDiscount": 0.85
+},
+{
+  "_id": {
+    "$oid": "660d14609ec2e9608dab79af"
+  },
+  "voucher_id": 2,
+  "image": "static/images/voucher/vouchertest3.png",
+  "activated": false,
+  "expiryDate": "2023-02-15T00:00:00.000",
+  "priceDeduct": 0,
+  "priceDiscount": 0.5
+},
+{
+  "_id": {
+    "$oid": "660d14609ec2e9608dab79b0"
+  },
+  "voucher_id": 3,
+  "image": "static/images/voucher/vouchertest4.png",
+  "activated": false,
+  "expiryDate": "2023-05-30T00:00:00.000",
+  "priceDeduct": 0,
+  "priceDiscount": 0.9
+},
+{
+  "_id": {
+    "$oid": "660d14609ec2e9608dab79b1"
+  },
+  "voucher_id": 4,
+  "image": "static/images/voucher/vouchertest5.png",
+  "activated": false,
+  "expiryDate": "2023-09-05T00:00:00.000",
+  "priceDeduct": 2,
+  "priceDiscount": 1
+}]

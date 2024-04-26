@@ -1,4 +1,5 @@
 # models/mongodb/create_collections.py
+
 import json
 from .db import db
 
@@ -13,23 +14,20 @@ def create_starting_collection(list, collection_name, starting_dataset):
     else:
         return
 
-def create_collections():
-
-
-
-    collist = db.list_collection_names()
-
-    create_starting_collection(collist, "shit", 'starting_datasets/fullnews.json')
-    if "customers3" not in collist:
-        print("Customers3 collection created")
-        db.create_collection("customers3")
-        # Read data from JSON file
-        with open('starting_datasets/fullnews.json') as f:
-            data = json.load(f)
-            print("data ", data)
-            if "_id" in data:
-                del data["_id"]
-            db["customers3"].insert_one(data)
-        print("Data inserted into customers3 collection")
+def create_empty_collection(list, collection_name):
+    if collection_name not in list:
+        db.create_collection(collection_name)
     else:
-        print("Customers3 collection already exists")
+        return
+
+# Creates starting collections for the backend app. 
+def create_collections():
+    list = db.list_collection_names()
+
+    create_starting_collection(list, "fullnews", 'starting_datasets/fullnews.json')
+    create_starting_collection(list, "bannernews", 'starting_datasets/bannernews.json')
+    create_starting_collection(list, "menuitem", 'starting_datasets/menuitem.json')
+    create_starting_collection(list, "vouchers", 'starting_datasets/vouchers.json')
+    create_empty_collection(list, "users")
+    create_empty_collection(list, "orders")
+    create_empty_collection(list, "cartitem")

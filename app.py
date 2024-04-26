@@ -19,7 +19,6 @@ from blueprints import order_bp
 from blueprints import voucher_bp
 
 # Routes
-from routes.country.get_countries import get_countries
 from routes.fullnews.get_fullnews import get_fullnews
 from routes.bannernews.get_bannernews import get_bannernews
 from routes.menuitem.get_menuitems import get_menuitems
@@ -43,7 +42,6 @@ from models.mongodb.create_collections import create_collections
 app = Flask(__name__)
 
 # Blueprint registrations to enable usage of route functions defined under each blueprint
-app.register_blueprint(country_bp)
 app.register_blueprint(fullnews_bp)
 app.register_blueprint(bannernews_bp)
 app.register_blueprint(menuitem_bp)

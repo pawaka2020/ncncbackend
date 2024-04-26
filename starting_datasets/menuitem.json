@@ -1,0 +1,841 @@
+[{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a550"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Coffee",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 1,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Coffee 1",
+  "userreviews": [
+    {
+      "message": "Powerful!",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a551"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Coffee",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 2,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Coffee 2",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a552"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Coffee",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 3,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Coffee 3",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a553"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Coffee",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 4,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Coffee 4",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a554"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Non-Coffee",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 5,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Non-Coffee 1",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    },
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a555"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Appetizers",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 6,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Appetizer 1",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a556"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Appetizers",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 7,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Appetizer 2",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a557"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        },
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        },
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Snacks",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 8,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Snack 1",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a558"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Snacks",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 9,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [
+    {
+      "name": "Supremo"
+    },
+    {
+      "name": "Lemon"
+    },
+    {
+      "name": "Soda lemon"
+    }
+  ],
+  "price": 10,
+  "title": "Snack 2",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a559"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        },
+        {
+          "name": "Supremo",
+          "price": 0
+        },
+        {
+          "name": "Yir",
+          "price": 5.45
+        },
+        {
+          "name": "Mandheling",
+          "price": 8
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Snacks",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 10,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [],
+  "price": 10,
+  "title": "Snack 3",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a55a"
+  },
+  "additions": [
+    {
+      "addition_details": [
+        {
+          "name": "Less sugar",
+          "price": 0
+        },
+        {
+          "name": "More sugar",
+          "price": 1
+        }
+      ],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Meals",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 11,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [],
+  "price": 10,
+  "title": "Food 1",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f7dcba02a01e791d47a55b"
+  },
+  "additions": [
+    {
+      "addition_details": [],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Beans"
+    },
+    {
+      "addition_details": [],
+      "selectedIndex": 0,
+      "selectedPrice": 0,
+      "title": "Sweetness"
+    }
+  ],
+  "available": true,
+  "cartitems": null,
+  "category": "Meals",
+  "description": "A rich and bold blend that promises to keep you wide awake and invigorated. Crafted from premium, handpicked coffee beans, this dark roast boasts a robust flavor with deep, earthy undertones and a subtle hint of cocoa.",
+  "id": 12,
+  "imagepath": "static/images/menuitem/coffeesample.png",
+  "ingredients": [],
+  "price": 10,
+  "title": "Food 2",
+  "userreviews": [
+    {
+      "message": "Powerful.",
+      "name": "Richard",
+      "stars": 5
+    },
+    {
+      "message": "Bitter but just the shot I need for my overtime shift.",
+      "name": "Susan Boyle",
+      "stars": 4
+    }
+  ]
+}]
