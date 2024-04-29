@@ -53,26 +53,6 @@ class User:
     def query_by_email(email):
         user = db['users'].find_one({'email': email})
         return user
-        # if (user):
-        #     return user
-        # return None
-    
-    # Finds 'User' object with matching 'id'
-    # If object located returns the object, else returns None
-    # @staticmethod
-    # def query_by_id(user_id):
-    #     user = db['users'].find_one({'user_id': user_id})
-    #     if (user):
-    #         return user
-    #     return None
-    
-    # @staticmethod
-    # def query_by_id(user_id):
-    #     user_data = db.users.find_one({'user_id': user_id})
-    #     if user_data:
-    #         return User(**user_data)  # Create User instance from dictionary
-    #     else:
-    #         return None
 
     # Finds 'User' object with matching'id', 
     # Flips object's 'is_logged_in' value to its opposite end ie if originally true then false, if false then true
@@ -84,7 +64,6 @@ class User:
             db['users'].update_one({'user_id': user_id}, {'$set': {'is_logged_in': new_log_status}})
 
     # Method to save user data to the database (implementation may vary based on the database used)
-    #db['countries'].
     def save(self):
         # Assuming db.users is the collection/table to store user data
         db.user.insert_one({
