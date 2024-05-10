@@ -12,5 +12,4 @@ order_bp = Blueprint("order_bp", __name__)
 voucher_bp = Blueprint("voucher_bp", __name__)
 
 # Blueprints for portal web pages
-main_bp = Blueprint("main_bp", __name__)
 portal_bp = Blueprint("portal_bp", __name__)

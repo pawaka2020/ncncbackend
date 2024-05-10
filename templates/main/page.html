@@ -1,0 +1,39 @@
+<!-- templates/main/page.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCNC main page</title>
+    {% include 'main/style.html' %}
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["username"].value;
+            var password = document.forms["loginForm"]["password"].value;
+
+            if (username !== "username" || password !== "password") {
+                alert("Incorrect username or password. Please try again.");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="overlay"></div> <!-- Semi-transparent overlay -->
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/main/tospic.png') }}" alt="NCNC Logo">
+        <h1>NCNC Portal</h1>
+        <form name="loginForm" action="/dashboard" method="post" onsubmit="return validateForm()">
+            <input type="text" name="username" placeholder="Username">
+            <br>
+            <input type="password" name="password" placeholder="Password">
+            <br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <div class="copyright">
+        Copyright No Coffee No Cure 2024
+    </div>
+</body>
+</html>

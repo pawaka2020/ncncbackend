@@ -1,0 +1,85 @@
+<!-- templates/main/style.html -->
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        /* background-color: #f0f0f0; */
+        background-image: url("{{ url_for('static', filename='images/main/coffeestockimage.png') }}");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column; /* Make the layout vertical */
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* Ensure the body fills the viewport */
+        overflow: hidden; /* Hide overflow from blur effect */
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+        backdrop-filter: blur(10px); /* Apply blur effect */
+        z-index: -1; /* Send the overlay behind other content */
+    }
+
+    .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 30%; /* Adjust the width as needed */
+        max-width: 600px; /* Optional: Set a maximum width */
+        margin-bottom: 30px; /* Add margin at the bottom */
+    }
+
+    h1 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    img {
+        /* width: 100px; */
+        width: 60%;
+        /* height: 100px; */
+        height: auto;
+        margin-bottom: 0px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        width: 60%;
+    }
+
+    input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 60%;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    .copyright {
+        color: #333;
+        font-size: 12px; /* Adjust the font size */
+    }
+</style>
