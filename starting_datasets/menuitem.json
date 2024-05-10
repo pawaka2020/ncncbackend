@@ -1,7 +1,4 @@
 [{
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a550"
-  },
   "additions": [
     {
       "addition_details": [
@@ -71,9 +68,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a551"
-  },
   "additions": [
     {
       "addition_details": [
@@ -143,9 +137,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a552"
-  },
   "additions": [
     {
       "addition_details": [
@@ -215,9 +206,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a553"
-  },
   "additions": [
     {
       "addition_details": [
@@ -287,9 +275,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a554"
-  },
   "additions": [
     {
       "addition_details": [
@@ -369,9 +354,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a555"
-  },
   "additions": [
     {
       "addition_details": [
@@ -441,9 +423,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a556"
-  },
   "additions": [
     {
       "addition_details": [
@@ -513,9 +492,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a557"
-  },
   "additions": [
     {
       "addition_details": [
@@ -605,9 +581,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a558"
-  },
   "additions": [
     {
       "addition_details": [
@@ -677,9 +650,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a559"
-  },
   "additions": [
     {
       "addition_details": [
@@ -751,9 +721,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a55a"
-  },
   "additions": [
     {
       "addition_details": [
@@ -800,9 +767,6 @@
   ]
 },
 {
-  "_id": {
-    "$oid": "65f7dcba02a01e791d47a55b"
-  },
   "additions": [
     {
       "addition_details": [],

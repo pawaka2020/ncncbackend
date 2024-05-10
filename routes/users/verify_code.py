@@ -129,7 +129,6 @@ def create_token_existing_user(user):
 
     print("cart_items length =", len(user['cart_items']))
 
-
     # Set the token expiration time to 1 hour from the current time
     exp_time = datetime.datetime.utcnow() + datetime.timedelta(TOKEN_EXPIRATION_HOURS)
 

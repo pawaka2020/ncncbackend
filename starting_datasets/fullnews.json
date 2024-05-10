@@ -1,7 +1,4 @@
-{
-    "_id": {
-      "$oid": "65f7b83402a01e791d47a545"
-    },
+[{
     "id": 1,
     "name": "static/images/fullnews/news1.png"
-  }
+  }]

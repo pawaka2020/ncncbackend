@@ -1,7 +1,4 @@
 [{
-  "_id": {
-    "$oid": "660d14609ec2e9608dab79ad"
-  },
   "voucher_id": 0,
   "image": "static/images/voucher/vouchertest1.png",
   "activated": false,
@@ -10,9 +7,6 @@
   "priceDiscount": 1
 },
 {
-  "_id": {
-    "$oid": "660d14609ec2e9608dab79ae"
-  },
   "voucher_id": 1,
   "image": "static/images/voucher/vouchertest2.png",
   "activated": false,
@@ -21,9 +15,6 @@
   "priceDiscount": 0.85
 },
 {
-  "_id": {
-    "$oid": "660d14609ec2e9608dab79af"
-  },
   "voucher_id": 2,
   "image": "static/images/voucher/vouchertest3.png",
   "activated": false,
@@ -32,9 +23,6 @@
   "priceDiscount": 0.5
 },
 {
-  "_id": {
-    "$oid": "660d14609ec2e9608dab79b0"
-  },
   "voucher_id": 3,
   "image": "static/images/voucher/vouchertest4.png",
   "activated": false,
@@ -43,9 +31,6 @@
   "priceDiscount": 0.9
 },
 {
-  "_id": {
-    "$oid": "660d14609ec2e9608dab79b1"
-  },
   "voucher_id": 4,
   "image": "static/images/voucher/vouchertest5.png",
   "activated": false,

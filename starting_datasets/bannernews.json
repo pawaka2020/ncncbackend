@@ -1,15 +1,9 @@
 [{
-  "_id": {
-    "$oid": "65f7c4bd02a01e791d47a54a"
-  },
   "article": "article 1",
   "id": 1,
   "image": "static/images/bannernews/bannerimage1.png"
 },
 {
-  "_id": {
-    "$oid": "65f7c4bd02a01e791d47a54b"
-  },
   "article": "article 2",
   "id": 2,
   "image": "static/images/bannernews/bannerimage2.png"

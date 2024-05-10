@@ -5,4 +5,4 @@ PyJWT
 Flask_Mail
 pymongo
 pycryptodome
-
+dash

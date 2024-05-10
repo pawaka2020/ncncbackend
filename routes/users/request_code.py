@@ -20,7 +20,4 @@ def request_code():
     print("Received email = ", email)
     print("Verification code = ", verification_code)
 
-    # Send email to 'email' containing 'verification_code' (TODO)
-    # send_email(email, 'Hello World')
-
     return jsonify({'message': 'Phone number received successfully'}), 200

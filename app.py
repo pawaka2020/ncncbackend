@@ -9,7 +9,6 @@ from flask_mail import Mail, Message
 from utils.send_email import send_email
 
 # Blueprints
-from blueprints import country_bp
 from blueprints import fullnews_bp
 from blueprints import bannernews_bp
 from blueprints import menuitem_bp
@@ -17,6 +16,9 @@ from blueprints import users_bp
 from blueprints import cartitem_bp
 from blueprints import order_bp
 from blueprints import voucher_bp
+from blueprints import main_bp
+from blueprints import portal_bp
+#from blueprints import webpages_bp
 
 # Routes
 from routes.fullnews.get_fullnews import get_fullnews
@@ -34,6 +36,9 @@ from routes.cartitem.edit_cartitem import edit_cartitem
 from routes.order.add_order import add_order
 from routes.order.delete_order import delete_order
 from routes.voucher.get_vouchers import get_vouchers
+#from routes.portal.frontpage import frontpage
+from routes.portal.main import page
+from routes.portal.login import page
 
 # Create new MongoDB collections for first-time run.
 from models.mongodb.create_collections import create_collections
@@ -49,15 +54,22 @@ app.register_blueprint(users_bp)
 app.register_blueprint(cartitem_bp)
 app.register_blueprint(order_bp)
 app.register_blueprint(voucher_bp)
+# portal blueprints
+app.register_blueprint(main_bp)
+app.register_blueprint(portal_bp)
+
+# Use this space to test your functions
+def test_functions():
+    print("TODO")
 
 # Main route that launches the backend at IPV4_ADDRESS defined at config.py
+# Since we are now building an internal portal web app on top of this backend, this code is no longer used
 @app.route('/')
 def hello_world():
     return 'NCNC backend'
 
 if __name__ == '__main__':
     with app.app_context():  
-        # Use this space to test your functions
-        print("")
+        test_functions()
         create_collections()
     app.run(host=IPV4_ADDRESS, debug=True)
