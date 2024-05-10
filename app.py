@@ -36,9 +36,7 @@ from routes.cartitem.edit_cartitem import edit_cartitem
 from routes.order.add_order import add_order
 from routes.order.delete_order import delete_order
 from routes.voucher.get_vouchers import get_vouchers
-#from routes.portal.frontpage import frontpage
-from routes.portal.main import page
-from routes.portal.login import page
+
 
 # Create new MongoDB collections for first-time run.
 from models.mongodb.create_collections import create_collections
