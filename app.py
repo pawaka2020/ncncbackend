@@ -17,6 +17,7 @@ from blueprints import cartitem_bp
 from blueprints import order_bp
 from blueprints import voucher_bp
 from blueprints import portal_bp
+from blueprints import backend_bp
 #from blueprints import webpages_bp
 
 # Routes
@@ -37,7 +38,10 @@ from routes.order.delete_order import delete_order
 from routes.voucher.get_vouchers import get_vouchers
 from routes.main.page import main_page
 from routes.dashboard.page import dashboard_page
+from routes.portal.login_test.login_test import login_page_test
+from routes.portal.login_test.login_test import dashboard_page_test
 
+from routes.portal.login_test.hash_password import register_portal_user
 
 # Create new MongoDB collections for first-time run.
 from models.mongodb.create_collections import create_collections
@@ -57,14 +61,14 @@ app.register_blueprint(portal_bp)
 
 # Use this space to test your functions
 def test_functions():
-    print("TODO")
+    print("test functions")
+    #register_portal_user('user', 'password')
 
 # Main route that launches the backend at IPV4_ADDRESS defined at config.py
 # Since we are now building an internal portal web app on top of this backend, this code is no longer used
 # @app.route('/')
 # def hello_world():
 #     return 'NCNC backend'
-
 if __name__ == '__main__':
     with app.app_context():  
         test_functions()

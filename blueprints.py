@@ -13,3 +13,4 @@ voucher_bp = Blueprint("voucher_bp", __name__)
 
 # Blueprints for portal web pages
 portal_bp = Blueprint("portal_bp", __name__)
+backend_bp = Blueprint("backend_bp", __name__)
