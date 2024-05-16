@@ -62,7 +62,7 @@ app.register_blueprint(portal_bp)
 # Use this space to test your functions
 def test_functions():
     print("test functions")
-    #register_portal_user('user', 'password')
+    #register_portal_user('username', 'password')
 
 # Main route that launches the backend at IPV4_ADDRESS defined at config.py
 # Since we are now building an internal portal web app on top of this backend, this code is no longer used

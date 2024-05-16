@@ -55,11 +55,6 @@
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
         var cookie = null;
-
-        if (username === "" || password === "") {
-            alert("Error: Username or password cannot be empty.");
-            return;
-        }
         
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "/login", true);
@@ -67,7 +62,9 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    //cookie = JSON.parse(xhr.responseText).cookie;
+                    cookie = JSON.parse(xhr.responseText).cookie;
+                    alert("cookie received: " + cookie);
+
                     //store cookie in user's browser
                     //store_cookie(cookie);
                     //lead user to dashboard page at "/dashboard_page_test" while using the cookie to authenticate access.
@@ -75,10 +72,11 @@
 
                     //placeholder code. I wont use this but this is just to remind myself how navigating to a different web page is done.
                     //window.location.href = "/dashboard_page_test";
-                } else if (xhr.status === 401) {
-                    alert("Error: Unauthorized access. Please check your username and password.");
-                } else {
-                    alert("Error: An unexpected error occurred. Please try again.");
+                } 
+
+                else {
+                    var response = JSON.parse(xhr.responseText);
+                    alert("Error: " + response.error);
                 }
             }
         };
