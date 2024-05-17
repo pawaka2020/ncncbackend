@@ -8,6 +8,7 @@ from config import SECRET_KEY
 import jwt
 from datetime import datetime, timedelta, timezone
 from flask import make_response
+from functools import wraps
 
 @portal_bp.route('/login_test')
 def login_page_test():
@@ -44,7 +45,8 @@ def get_token(user):
         'exp': datetime.now(timezone.utc) + timedelta(hours=validity_hours)
     }
     token = jwt.encode(payload, secret_key, algorithm='HS256')
-    return token.encode('utf-8')
+    return token
+    #return token.encode('utf-8')
 
 # Stores this token into collection 'portal_user_tokens'
 def store_token(username, token):
@@ -58,14 +60,14 @@ def store_token(username, token):
 
 def create_cookie(token):
     response = make_response()
-    decoded_token = token.decode('utf-8')
-    response.set_cookie('session_token', decoded_token, httponly=True, secure=True, samesite='Strict')
+    decoded_token = token.decode('utf-8')  # Decode the token bytes to string
+    response.set_cookie('login_token', decoded_token, httponly=False, secure=False, samesite='Strict')
     return response
 
 @portal_bp.route('/login', methods=['POST'])
 def login():
     token = None
-    cookie = None
+    #cookie = None
     username, password = get_login_data(request)
     if not username or not password:
         return jsonify({"error": "Username and password are required fields."}), 400
@@ -77,8 +79,9 @@ def login():
     if match_password(user, password):
         token = get_token(user)
         store_token(username, token)
-        response = create_cookie(token)
-        return response, 200
+        #cookie = create_cookie(token)
+        # return cookie, 200
+        return jsonify({"message": "Login successful.", "token": token}), 200
     else:
         return jsonify({"error": "Password incorrect."}), 401
 
@@ -88,17 +91,32 @@ def check_authorization():
         return "Error 401: Unauthorized access", 401
     return None
 
-@portal_bp.route('/dashboard_page_test')
-def dashboard_page_test():
-    # auth_error = False
-    # auth_error = check_authorization()
-    # if auth_error:
-    #     return auth_error
-    return "This is the dashboard"
+def token_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        token = request.args.get('token')
+        if not token:
+            return jsonify({"error": "Unauthorized access"}), 401
+        try:
+            data = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+            # Optionally, you can perform additional checks on the decoded data
+            # to ensure that it's valid for accessing the dashboard.
+        except jwt.ExpiredSignatureError:
+            return jsonify({"error": "Token has expired"}), 401
+        except jwt.InvalidTokenError:
+            return jsonify({"error": "Invalid token"}), 401
 
+        return f(*args, **kwargs)
+
+    return decorated_function
+
+@portal_bp.route('/dashboard_page_test')
+@token_required
+def dashboard_page_test():
+    return "This is the dashboard"
+    
 def custom_decorator(func):
     def decorated_function(*args, **kwargs):
         print("custom decorator activated")
         return func(*args, **kwargs)
     return decorated_function
-

@@ -61,27 +61,23 @@
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    cookie = JSON.parse(xhr.responseText).cookie;
-                    alert("cookie received: " + cookie);
+                if (xhr.status === 200) { 
+                    alert("Login successful.");
+                    var response = JSON.parse(xhr.responseText);
+                    var token = response.token;
 
-                    //store cookie in user's browser
-                    //store_cookie(cookie);
-                    //lead user to dashboard page at "/dashboard_page_test" while using the cookie to authenticate access.
-                    //load_dashboard(cookie);
-
-                    //placeholder code. I wont use this but this is just to remind myself how navigating to a different web page is done.
-                    //window.location.href = "/dashboard_page_test";
-                } 
-
+                    //use the token right away, no need to store it in document (user browser cache).
+                    window.location.href = '/dashboard_page_test?token=' + token;
+                }    
                 else {
                     var response = JSON.parse(xhr.responseText);
                     alert("Error: " + response.error);
                 }
             }
-        };
+        }
         xhr.send(JSON.stringify({ "username": username, "password": password }));
-    }
+    };
+        
 </script>
 </html>
 
