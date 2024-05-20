@@ -9,6 +9,7 @@ import jwt
 from datetime import datetime, timedelta, timezone
 from flask import make_response
 from functools import wraps
+from bson import ObjectId
 
 @portal_bp.route('/login_test')
 def login_page_test():
@@ -43,6 +44,7 @@ def get_token(user):
     payload = {
         'user_id': str(user_id),
         'exp': datetime.now(timezone.utc) + timedelta(hours=validity_hours)
+        # insert other data as appropriate here.
     }
     token = jwt.encode(payload, secret_key, algorithm='HS256')
     return token
@@ -99,15 +101,17 @@ def token_required(f):
             return jsonify({"error": "Unauthorized access"}), 401
         try:
             data = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-            # Optionally, you can perform additional checks on the decoded data
-            # to ensure that it's valid for accessing the dashboard.
+            user_id = data.get('user_id')
+            user_id_object = ObjectId(user_id)
+            user = db['portal_users'].find_one({'_id': user_id_object})
+
+            if user is None:
+                return jsonify({"error": "User not found"}), 401
         except jwt.ExpiredSignatureError:
             return jsonify({"error": "Token has expired"}), 401
         except jwt.InvalidTokenError:
             return jsonify({"error": "Invalid token"}), 401
-
         return f(*args, **kwargs)
-
     return decorated_function
 
 @portal_bp.route('/dashboard_page_test')

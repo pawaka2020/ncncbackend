@@ -62,10 +62,9 @@
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) { 
-                    alert("Login successful.");
+                    //alert("Login successful.");
                     var response = JSON.parse(xhr.responseText);
                     var token = response.token;
-
                     //use the token right away, no need to store it in document (user browser cache).
                     window.location.href = '/dashboard_page_test?token=' + token;
                 }    

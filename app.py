@@ -36,10 +36,12 @@ from routes.cartitem.edit_cartitem import edit_cartitem
 from routes.order.add_order import add_order
 from routes.order.delete_order import delete_order
 from routes.voucher.get_vouchers import get_vouchers
-from routes.main.page import main_page
-from routes.dashboard.page import dashboard_page
+#from routes.main.page import main_page
+#from routes.dashboard.page import dashboard_page
 from routes.portal.login_test.login_test import login_page_test
 from routes.portal.login_test.login_test import dashboard_page_test
+from routes.portal.main.page import main_page
+from routes.portal.main.page import login_portal_user
 
 from routes.portal.login_test.hash_password import register_portal_user
 
