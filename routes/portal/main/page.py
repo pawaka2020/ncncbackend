@@ -9,5 +9,5 @@ def main_page():
 
 @portal_bp.route('/login_portal_user', methods=['POST'])
 def login_portal_user():
-    print('hghjgjhgjh ')
+    #print('hghjgjhgjh ')
     return jsonify({"error": "TODO"}), 401

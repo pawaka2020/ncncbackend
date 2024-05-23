@@ -1,14 +1,25 @@
 <!-- templates/dashboard/page.html -->
-
+<!-- templates/dashboard/page.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    {% include 'dashboard/style.html' %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  {% include 'dashboard/style.html' %}
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Dashboard Page</h1>
+  <div class="sidebar">
+    <img src="{{ url_for('static', filename='images/common/ncnclogo.png') }}" alt="Sidebar Logo" class="sidebar-logo">
+    <div class="logo sidebar-item">
+      <i class="fas fa-home"></i>
+      <div class="text">Home</div>
+    </div>
+  </div>
+  <div class="main-content">
+    <h1>Welcome to the Dashboard</h1>
+  </div>
 </body>
 </html>

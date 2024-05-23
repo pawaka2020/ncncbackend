@@ -42,6 +42,7 @@ from routes.portal.login_test.login_test import login_page_test
 from routes.portal.login_test.login_test import dashboard_page_test
 from routes.portal.main.page import main_page
 from routes.portal.main.page import login_portal_user
+from routes.portal.dashboard.page import dashboard_page
 
 from routes.portal.login_test.hash_password import register_portal_user
 

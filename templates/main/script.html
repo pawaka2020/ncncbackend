@@ -1,16 +1,17 @@
 <script>   
     function login() {
-        var username = document.getElementById("username").value; // this code makes the button unresponsive
-        var password = document.getElementById("password").value; // this code makes the button unresponsive
-        alert("asdsasadsadsadsdaas Username: " + username + "\nPassword: " + password);
-        var cookie = null;
+        // var username = document.getElementById("username").value; // this code makes the button unresponsive
+        // var password = document.getElementById("password").value; // this code makes the button unresponsive
+        // alert("asdsasadsadsadsdaas Username: " + username + "\nPassword: " + password);
+        // var cookie = null;
                 
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/login_portal_user", true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.onreadystatechange = function () {
-            
-        }
-        xhr.send(JSON.stringify({ "username": username, "password": password }));
+        // var xhr = new XMLHttpRequest();
+        // xhr.open("POST", "/login_portal_user", true);
+        // xhr.setRequestHeader("Content-Type", "application/json");
+        // xhr.onreadystatechange = function () {   
+        // }
+        // xhr.send(JSON.stringify({ "username": username, "password": password }));
+
+        window.location.href = '/dashboard';
     }   
 </script>
