@@ -1,5 +1,4 @@
 <!-- templates/dashboard/page.html -->
-<!-- templates/dashboard/page.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +7,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
   {% include 'dashboard/style.html' %}
+  <!-- {% include 'dashboard/script.html' %} -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="sidebar">
     <img src="{{ url_for('static', filename='images/common/ncnclogo.png') }}" alt="Sidebar Logo" class="sidebar-logo">
-    <div class="logo sidebar-item">
+
+    <div class="sidebar-item" id = 'home' onclick="showContent('Home')">
       <i class="fas fa-home"></i>
-      <div class="text">Home</div>
+      <div class="sidebar-item-text">Home</div>
+    </div>
+    <div class="sidebar-item" id = 'orders' onclick="showContent('Orders')">
+      <i class="fas fa-coffee"></i>
+      <div class="sidebar-item-text">Orders</div>
+    </div>
+    <div class="sidebar-item" id = 'users' onclick="showContent('Users')">
+      <i class="fas fa-user"></i>
+      <div class="sidebar-item-text">Users</div>
+    </div>
+    <div class="sidebar-item" id = 'contacts' onclick="showContent('Contacts')">
+      <i class="fas fa-address-book"></i>
+      <div class="sidebar-item-text">Contacts</div>
     </div>
   </div>
-  <div class="main-content">
+  <div class="main-content" id="content">
     <h1>Welcome to the Dashboard</h1>
   </div>
+  <script>
+    function showContent(content) {
+      
+      //change text value inside 'content'
+      const contentDiv = document.getElementById('content');
+      contentDiv.innerHTML = `<h1>${content} Content</h1>`;
+
+
+      // document.getElementById('main-content').innerHTML = '<h1>' + content + '</h1>';
+      // Remove the 'selected' class from all sidebar items
+      var items = document.getElementsByClassName('sidebar-item');
+
+      for (var i = 0; i < items.length; i++) {
+        items[i].classList.remove('sidebar-item-selected');
+      }
+
+      // // Add the 'selected' class to the clicked item
+      event.currentTarget.classList.add('sidebar-item-selected');
+
+      
+      
+    }
+    function doSomething() {
+      alert("haha")
+    }
+  </script>
 </body>
 </html>

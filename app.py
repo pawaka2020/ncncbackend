@@ -67,6 +67,7 @@ def test_functions():
     print("test functions")
     #register_portal_user('username', 'password')
 
+
 # Main route that launches the backend at IPV4_ADDRESS defined at config.py
 # Since we are now building an internal portal web app on top of this backend, this code is no longer used
 # @app.route('/')

@@ -7,3 +7,5 @@ Flask-Login
 pymongo
 pycryptodome
 dash
+# try out streamlit
+streamlit
